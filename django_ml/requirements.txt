@@ -11,7 +11,6 @@ djangorestframework==3.12.1
 docutils==0.15.2
 Faker==4.1.1
 jmespath==0.10.0
-mysqlclient==2.0.1
 Pillow==7.2.0
 pycodestyle==2.6.0
 pycparser==2.20
