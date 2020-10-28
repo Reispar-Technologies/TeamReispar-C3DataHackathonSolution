@@ -3,7 +3,7 @@
 <br>
 <div class="row justify-content-md-center">    
   <div class="col-md-auto">
-    <h3>Upload CTScan image</h3>
+    <h3>Upload CTScan Image</h3>
   </div>
 </div>
 
@@ -11,16 +11,24 @@
 
 
 <div class="container jumbotron">
+
   <div class="row justify-content-md-center">    
     <div class="col-md-auto">
-      <input id="upload" type="file">
+      <label for="name">Name Field </label>
+      <input type="text" id="name" (change)="onTextchange($event)">      
+    </div>
+  </div>
+
+  <div class="row justify-content-md-center">    
+    <div class="col-md-auto">
+      <input type="file" (change)="onImagechange($event)">
     </div>
   </div>
 
 <br>
   <div class="row justify-content-md-center">   
     <div class="col-md-auto">
-      <button class="btn btn-primary"> Upload</button>
+      <button class="btn btn-primary" (click)="newImage()"> Upload</button>
     </div>
   </div>
 
