@@ -7,6 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CtscanComponent implements OnInit {
 
+  name: string;
+  image:File;
+  
+
   constructor() { }
 
   ngOnInit(): void {
