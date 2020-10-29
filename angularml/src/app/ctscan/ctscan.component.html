@@ -28,8 +28,25 @@
 <br>
   <div class="row justify-content-md-center">   
     <div class="col-md-auto">
-      <button class="btn btn-primary" (click)="newImage()"> Upload</button>
+      <button class="btn btn-primary" [disabled]="!image" (click)="newImage()"> Upload</button>
     </div>
+  </div>
+
+  <div class="progress" *ngIf="progress">
+    <div class="progress-bar" [style.width]="progress + '%'">{{progress}}%</div>
+  </div>
+
+  <br><br>
+  <div class="row justify-content-md-center">   
+    <div class="col-md-auto">
+ 
+  <div *ngIf="message=='Upload Completed'" class="alert alert-success" role="alert">
+    {{ message }}
+  </div>
+  <div *ngIf="message=='Upload failed'" class="alert alert-danger" role="alert">
+    {{ message }}
+  </div>
+  </div>
   </div>
 
 </div>
