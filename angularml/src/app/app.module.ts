@@ -13,12 +13,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // import{  MatButtonModule } from '@angular/material/button';
 import { HomeComponent } from './home/home.component';
+import { CovidImpactComponent } from './covid-impact/covid-impact.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CtscanComponent,
-    HomeComponent
+    HomeComponent,
+    CovidImpactComponent
   ],
   imports: [
     BrowserModule,

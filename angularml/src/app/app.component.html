@@ -1,37 +1,41 @@
-<nav class="navbar navbar-expand-md  navbar-light bg-light">
-  <a class="navbar-brand" href="#">Reispar Tech</a>
-  
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" >
-    <span class="navbar-toggler-icon"></span>
+<nav class="navbar navbar-expand-lg wrapper">
+  <a class="navbar-brand" href="#"><img class="logo" src="assets/images/reisparlogo.png"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"><i class="fa fa-bars"></i></span>
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
+    <ul class="navbar-nav ml-auto">
+      
       <li class="nav-item active">
         <a class="nav-link" routerLink="/">Home <span class="sr-only">(current)</span></a>
+      </li>      
+
+      <li class="nav-item">
+        <a routerLink="/images" class="nav-link">CT-Scan</a>
       </li>
       <li class="nav-item">
-        <a routerLink="/images" class="nav-link" href="#">Covid19 Analysis</a>
+          <a class="nav-link" href="">Analytics</a>
       </li>
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Economic Impact <span class="sr-only">(current)</span></a>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Covid-Impact
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="">Economic Impact</a>
+          <a class="dropdown-item" href="">Public Health Impact</a>
+        </div>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Public Health</a>
-      </li>
-     
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Data Sources <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="">Data Sources</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Team Members </a>
+          <a class="nav-link" href="">Project Overview</a>
       </li>
-      
-     
+      <li class="nav-item">
+          <a class="nav-link" href="">Team Members</a>
+      </li>
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">FeedBack</button>
-    </form>
   </div>
 </nav>
 <br>

@@ -1,6 +1,6 @@
-<br>
 
-<br>
+<h1 class="text-center">CT-SCAN PAGE</h1>
+<hr>
 <div class="row justify-content-md-center">    
   <div class="col-md-auto">
     <h3>Upload CTScan Image</h3>
@@ -9,22 +9,54 @@
 
 <hr>
 
+<!-- 
+<!-- df -->
+<div class="wrapper flex row">
+<div class="mainContent-ctScan card col-sm-12 col-md-4">
+  <h3>CT-Scan Form</h3>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos blanditiis nulla iusto minus tenetur, in aspernatur quas officiis?</p>
+  <div id="ctScanForm">
+    
+      <img  [src]="imgURL" height="200" alt="Image Here">
 
-<div class="container jumbotron">
+      <div class="form-control">
+        <label for="name">(Optional) Img Identifier </label>
+        <input type="text" id="name" (change)="onTextchange($event)" >      
+      </div>
+      <div class="form-control">
+          <input type="file" (change)="onImagechange($event)" name="Choose Image" class="">
+      </div>
+      <div class="progress" *ngIf="progress">
+        <div class="progress-bar" [style.width]="progress + '%'">{{progress}}%</div>
+      </div>
+        <button class="btn btn-primary" [disabled]="!image" (click)="newImage()"> Upload</button>
+      <div *ngIf="message=='Upload Completed'" class="alert alert-success" role="alert">
+        {{ message }}
+      </div>
+      <div *ngIf="message=='Upload failed'" class="alert alert-danger" role="alert">
+        {{ message }}
+      </div>
+    </div>
+</div>
+</div>
 
+
+
+<!-- fgd -->
+<!-- 
   <div class="row justify-content-md-center">    
     <div class="col-md-auto">
-      <label for="name">Name Field </label>
+      <label for="name">Image ID </label>
       <input type="text" id="name" (change)="onTextchange($event)">      
     </div>
-  </div>
-
+  </div> -->
+<!-- 
   <div class="row justify-content-md-center">    
     <div class="col-md-auto">
       <input type="file" (change)="onImagechange($event)">
     </div>
-  </div>
-
+  </div> -->
+<!-- 
 <br>
   <div class="row justify-content-md-center">   
     <div class="col-md-auto">
@@ -34,8 +66,8 @@
 
   <div class="progress" *ngIf="progress">
     <div class="progress-bar" [style.width]="progress + '%'">{{progress}}%</div>
-  </div>
-
+  </div> -->
+<!-- 
   <br><br>
   <div class="row justify-content-md-center">   
     <div class="col-md-auto">
@@ -47,6 +79,27 @@
     {{ message }}
   </div>
   </div>
-  </div>
+  </div> -->
+  <!-- Out put section -->
+  
 
+
+<br>
+<div class=" jumbotron row justify-content-md-center" *ngIf="imagearray.prediction!=''">
+<div class="row justify-content-md-center">    
+  <div class="col-md-auto">
+    <ol>
+      <li>
+        {{imagearray.name}}
+      </li>
+      <li>
+        <img src="{{imagearray.image}}" alt="Opps" width="300px"> 
+      </li><br>
+      <li>
+        <h3>Prediction is {{imagearray.prediction}}</h3>
+        
+      </li>
+    </ol>      
+  </div>
+</div>
 </div>

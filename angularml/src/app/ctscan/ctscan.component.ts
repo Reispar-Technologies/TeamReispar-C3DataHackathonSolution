@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpEventType } from '@angular/common/http';
 import { map, catchError } from "rxjs/operators"
 import { throwError } from "rxjs";
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-ctscan',
@@ -13,11 +14,16 @@ export class CtscanComponent implements OnInit {
   name: string;
   image: File;
   progress: number;
-  message:string;
+  message: string;
+
+  imagearray = { id: -1, name: '', image: File, prediction: '' };
+
+  imgURL: any;
 
 
 
-  constructor(private http: HttpClient) { }
+  constructor(private api: ApiService) {
+  }
 
   ngOnInit(): void {
   }
@@ -27,25 +33,52 @@ export class CtscanComponent implements OnInit {
 
   onImagechange(event: any) {
     this.image = event.target.files[0];
+    this.preview_image(this.image)
   }
+  preview_image(files) {
+      
+    var reader = new FileReader();
+    reader.readAsDataURL(files); 
+    reader.onload = (_event) => { 
+    this.imgURL = reader.result; 
+    }}
+ 
+
+
+
+
+  getPred() {
+    this.api.getImagedata().subscribe(
+      data => {
+        this.imagearray = data[0];
+
+      },
+      error => {
+        console.log(error);
+
+      }
+    )
+  }
+
 
   newImage() {
     const uploadImage = new FormData;
     this.progress = 1;
     uploadImage.append('name', this.name);
     uploadImage.append('image', this.image, this.image.name);
-    this.http.post("http://127.0.0.1:8000/image/", uploadImage, {
-      reportProgress: true,
-      observe: "events"
-    }).pipe(
+    this.api.postImage(uploadImage).pipe(
       map((event: any) => {
         if (event.type == HttpEventType.UploadProgress) {
           this.progress = Math.round((100 / event.total) * event.loaded);
-          if (this.progress === 100){
+          if (this.progress === 100) {
             this.message = "Upload Completed"
+
           }
         } else if (event.type == HttpEventType.Response) {
           this.progress = null;
+          this.getPred()
+          console.log(this.imagearray, ' called func');
+
         }
       }),
       catchError((err: any) => {
@@ -56,4 +89,5 @@ export class CtscanComponent implements OnInit {
     ).toPromise();
 
   }
+
 }
