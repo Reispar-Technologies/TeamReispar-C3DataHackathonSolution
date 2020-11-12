@@ -14,13 +14,27 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // import{  MatButtonModule } from '@angular/material/button';
 import { HomeComponent } from './home/home.component';
 import { CovidImpactComponent } from './covid-impact/covid-impact.component';
+import { AnalyticsComponent } from './analytics/analytics.component';
+import { DatasourceComponent } from './datasource/datasource.component';
+import { ProjectoverviewComponent } from './projectoverview/projectoverview.component';
+import { TeamMembersComponent } from './team-members/team-members.component';
+import { AnalyticsCorrelationComponent } from './analytics-correlation/analytics-correlation.component';
+import { AnalyticsStatisticsComponent } from './analytics-statistics/analytics-statistics.component';
+import { AnalyticsForecastingComponent } from './analytics-forecasting/analytics-forecasting.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CtscanComponent,
     HomeComponent,
-    CovidImpactComponent
+    CovidImpactComponent,
+    AnalyticsComponent,
+    DatasourceComponent,
+    ProjectoverviewComponent,
+    TeamMembersComponent,
+    AnalyticsCorrelationComponent,
+    AnalyticsStatisticsComponent,
+    AnalyticsForecastingComponent
   ],
   imports: [
     BrowserModule,

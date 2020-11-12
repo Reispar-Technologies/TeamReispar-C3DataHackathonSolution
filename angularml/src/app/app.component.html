@@ -12,28 +12,40 @@
       </li>      
 
       <li class="nav-item">
-        <a routerLink="/images" class="nav-link">CT-Scan</a>
-      </li>
-      <li class="nav-item">
-          <a class="nav-link" href="">Analytics</a>
+        <a routerLink="/Images" class="nav-link">CT-Scan</a>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Covid-Impact
+          Covid Analytics
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="">Economic Impact</a>
-          <a class="dropdown-item" href="">Public Health Impact</a>
+          <a routerLink="/Analytics-Intervention" class="dropdown-item" href="">Intervention efficiency</a>
+          <a routerLink="/Analytics-Correlation" class="dropdown-item" href="">Correlation with COVID-19</a>
+          <a routerLink="/Analytics-Statistics" class="dropdown-item" href="">COVID-19 infection and death statistics</a>
+          <a routerLink="/Analytics-Forecasting" class="dropdown-item" href="">COVID-19 forecasting</a>
         </div>
       </li>
+
+      
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Covid-Impact [Economic]
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a routerLink="/Covid-Impact" class="dropdown-item" href="">Economic Impact</a>
+          <a routerLink="/Covid-Impact" class="dropdown-item" href="">Public Health Impact</a>
+        </div>
+      </li>
+      
       <li class="nav-item">
-          <a class="nav-link" href="">Data Sources</a>
+        <a routerLink="/Data-Sources" class="nav-link" href="">Covid-Impact [Policy]</a>
+    </li>
+
+      <li class="nav-item">
+          <a routerLink="/Data-Sources" class="nav-link" href="">Data Sources</a>
       </li>
       <li class="nav-item">
-          <a class="nav-link" href="">Project Overview</a>
-      </li>
-      <li class="nav-item">
-          <a class="nav-link" href="">Team Members</a>
+          <a routerLink="Team-Members" class="nav-link" href="">Team Members</a>
       </li>
     </ul>
   </div>

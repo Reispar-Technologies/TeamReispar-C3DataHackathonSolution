@@ -231,7 +231,15 @@
 @media (min-width:501px) and (max-width: 768px){
     .wrapper{
         margin: 0;
-        padding: 0px 5px;
+        padding: 0px 25px;
+        width: 100%;
+    }
+}
+
+@media (min-width:769px) and (max-width: 1023px){
+    .wrapper{
+        margin: 0;
+        padding: 0px 30px;
         width: 100%;
     }
 }
