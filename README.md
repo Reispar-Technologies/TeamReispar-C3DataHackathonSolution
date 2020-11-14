@@ -1,6 +1,6 @@
-# TeamReispar-C3DataHackathonSolution
+## TeamReispar-C3DataHackathonSolution
 
-*Data Sources*:
+# Data Sources:
 
 From C3 Data Lake Source: https://c3.ai/covid-19-api-documentation/#section/C3.ai-APIs-for-COVID-19-Unified-Data
 
@@ -8,6 +8,7 @@ Policy Detail: https://www.bsg.ox.ac.uk/research/research-projects/coronavirus-g
 
 Outbreak Location: John Hopkins University datasets https://github.com/CSSEGISandData/COVID-19
 
+---
 Other Data Sources:
 covid.csv:
 
