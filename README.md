@@ -20,7 +20,7 @@ Link: https://covidtracking.com/data/download/all-states-history.csv
       https://covidtracking.com/
       
 Weather data: 12_Google BigQuery COVID-19 Dataset -> Weather Data for COVID-19 Research
-weather_data.csv:
+weather_data.csv 
 Link:
     https://console.cloud.google.com/bigquery?p=bigquery-public-data&d=covid19_weathersource_com&t=county_day_history&page=table&project=zippy-card-293323&folder=&organizationId=
     https://console.cloud.google.com/storage/browser/fadi_c3_weather_data
