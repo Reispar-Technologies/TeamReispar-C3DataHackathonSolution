@@ -4,9 +4,27 @@
 
 From C3 Data Lake Source: https://c3.ai/covid-19-api-documentation/#section/C3.ai-APIs-for-COVID-19-Unified-Data
 
-Policy Detail: https://www.bsg.ox.ac.uk/research/research-projects/coronavirus-government-response-tracker
+Policy Detail- 	University of Oxford: Coronavirus Government Response Tracker
+Link: https://www.bsg.ox.ac.uk/research/research-projects/coronavirus-government-response-tracker
+
+Clinical Data - The University of Montreal: COVID-19 Image Data Collection (Diagnosis, DiagnosisDetail)
+Link: https://github.com/ieee8023/covid-chestxray-dataset
+File: COVID19 CT scan Images
 
 Outbreak Location: John Hopkins University datasets https://github.com/CSSEGISandData/COVID-19
+File: Time Series (Recovered, Confrimed & Deaths)
+
+Daily Case Reports: COVID19_Tracking_Project
+File: all-states-history(1).csv
+Link: https://covidtracking.com/data/download/all-states-history.csv
+      https://covidtracking.com/
+      
+Weather data: 12_Google BigQuery COVID-19 Dataset -> Weather Data for COVID-19 Research
+weather_data.csv:
+Link:
+    https://console.cloud.google.com/bigquery?p=bigquery-public-data&d=covid19_weathersource_com&t=county_day_history&page=table&project=zippy-card-293323&folder=&organizationId=
+    https://console.cloud.google.com/storage/browser/fadi_c3_weather_data
+
 
 ---
 Other Data Sources:
