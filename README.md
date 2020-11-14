@@ -86,23 +86,5 @@ temperature _monthly_data_per_country.csv
 
 ---
 
-all-states-history(1).csv:
 
-  COVID19_Tracking_Project
-
-     https://covidtracking.com/data/download/all-states-history.csv
      
-  Data source
-  
-    https://covidtracking.com/
-
----
-
-weather_data.csv:
-
-  Weather data downloaded from
-  12_Google BigQuery COVID-19 Dataset -> Weather Data for COVID-19 Research
-
-    https://console.cloud.google.com/bigquery?p=bigquery-public-data&d=covid19_weathersource_com&t=county_day_history&page=table&project=zippy-card-293323&folder=&organizationId=
-
-    https://console.cloud.google.com/storage/browser/fadi_c3_weather_data
