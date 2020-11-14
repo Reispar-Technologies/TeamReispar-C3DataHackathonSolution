@@ -1,35 +1,33 @@
+<!-- Page Heading -->
+<section class="wrapper ct-scan-heading">
+  <h1 class="text-center">CT-SCAN PAGE</h1>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas molestiae ad alias neque repellendus atque nobis,
+    saepe excepturi cupiditate illo itaque perspiciatis vitae beatae esse dolorum aut, ipsum suscipit quo! <br><br>Lorem
+    ipsum dolor sit, amet consectetur adipisicing elit. Ab consequuntur inventore quia minima porro. Minima maiores nisi
+    officiis consequuntur culpa rem vero perferendis nulla, facilis praesentium perspiciatis nobis vel enim.</p>
+</section>
 
-<h1 class="text-center">CT-SCAN PAGE</h1>
-<hr>
-<div class="row justify-content-md-center">    
-  <div class="col-md-auto">
-    <h3>Upload CTScan Image</h3>
-  </div>
-</div>
 
-<hr>
 
-<!-- 
-<!-- df -->
-<div class="wrapper flex row">
-<div class="mainContent-ctScan card col-sm-12 col-md-4">
-  <h3>CT-Scan Form</h3>
-  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos blanditiis nulla iusto minus tenetur, in aspernatur quas officiis?</p>
-  <div id="ctScanForm">
-    
-      <img  [src]="imgURL" height="200" alt="Image Here">
+<!-- Image Upload Section -->
+<section class="ct-scan-uploadSection wrapper">
+  <div class="row flex card">
+
+    <div class="uploadSection-upload col-sm-12 col-md-6">
 
       <div class="form-control">
+
         <label for="name">(Optional) Img Identifier </label>
-        <input type="text" id="name" (change)="onTextchange($event)" >      
-      </div>
-      <div class="form-control">
-          <input type="file" (change)="onImagechange($event)" name="Choose Image" class="">
+        <input type="text" id="name" (change)="onTextchange($event)">
+        <input type="file" (change)="onImagechange($event)" name="Choose Image" class="">
       </div>
       <div class="progress" *ngIf="progress">
         <div class="progress-bar" [style.width]="progress + '%'">{{progress}}%</div>
       </div>
-        <button class="btn btn-primary" [disabled]="!image" (click)="newImage()"> Upload</button>
+
+      <input type="submit" value="Submit Image" class="btn btn-primary" name="submit" [disabled]="!image"
+        (click)="newImage()">
+
       <div *ngIf="message=='Upload Completed'" class="alert alert-success" role="alert">
         {{ message }}
       </div>
@@ -37,9 +35,16 @@
         {{ message }}
       </div>
     </div>
-</div>
-</div>
 
+    <div *ngIf="imagearray.prediction==''" class= "uploadSection-preview col-sm-12 col-md-6">
+      <img src="https://via.placeholder.com/200x100/000000/FFFFFF/?text=upload image here" alt="placeholder"
+        id="previewImage">
+    </div>
+    <div *ngIf="imagearray.prediction!=''" class="uploadSection-preview col-sm-12 col-md-6">
+      <img src="{{imagearray.image}}" alt="placeholder" id="previewImage">
+    </div>
+  </div>
+</section>
 
 
 <!-- fgd -->
@@ -80,26 +85,72 @@
   </div>
   </div>
   </div> -->
-  <!-- Out put section -->
-  
+
+<!-- Out put section -->
+
 
 
 <br>
-<div class=" jumbotron row justify-content-md-center" *ngIf="imagearray.prediction!=''">
-<div class="row justify-content-md-center">    
-  <div class="col-md-auto">
-    <ol>
-      <li>
-        {{imagearray.name}}
-      </li>
-      <li>
-        <img src="{{imagearray.image}}" alt="Opps" width="300px"> 
-      </li><br>
-      <li>
-        <h3>Prediction is {{imagearray.prediction}}</h3>
-        
-      </li>
-    </ol>      
+
+
+<!-- Scan Result Section -->
+<section class="wrapper ct-scan-result">
+  <h3 class="text-center">SCAN Result Analysis Section</h3>
+
+  <div class=" jumbotron row justify-content-md-center" *ngIf="imagearray.prediction!=''">
+    <section class="wrapper ct-scan-result">
+      <div class="row justify-content-md-center">
+        <div class="col-md-auto">
+          <ol>
+            <li>
+              {{imagearray.name}}
+            </li><br>
+            <li>
+              <h3>Prediction is {{imagearray.prediction}}</h3>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
   </div>
-</div>
-</div>
+
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut maxime dolores tempora quam soluta id dolore commodi.
+    Impedit eveniet quidem sit. Culpa architecto esse corrupti nemo aperiam provident tenetur deserunt.<br><br>
+    Saepe velit praesentium, nobis autem omnis blanditiis cupiditate ducimus dignissimos fugit provident, esse minima
+    ipsam. Ratione sit voluptate cupiditate, placeat rem exercitationem explicabo perspiciatis at ullam illum, tempore
+    unde tenetur!<br><br>
+    Placeat molestias natus reiciendis ex aperiam? Ut eaque est obcaecati dolorum, porro sapiente enim delectus illum
+    soluta quisquam vitae, quis officia maiores quo fugiat adipisci saepe eligendi ullam nulla aliquid.
+    Culpa reprehenderit quisquam dolorum consectetur voluptatibus molestiae modi rerum facere fugit itaque expedita
+    impedit doloremque dolore adipisci vero corporis error, iure asperiores quidem. A distinctio soluta, asperiores quo
+    fugiat ratione.<br><br>
+    Ratione magnam repudiandae ipsa, et iure neque blanditiis ea tempora odio delectus vel adipisci soluta nostrum
+    consequatur temporibus, consectetur optio voluptate. Est a beatae rerum doloremque nesciunt impedit, debitis
+    commodi!<br><br>
+    Repudiandae ab maiores facere libero eum neque quas atque harum doloremque enim animi suscipit exercitationem ipsum
+    omnis, porro autem corrupti error? Ullam commodi, ea mollitia suscipit dignissimos sequi excepturi placeat?<br><br>
+    Doloremque natus adipisci ea iste ipsum architecto modi molestias officiis optio porro animi est, omnis
+    reprehenderit dolorem sit accusamus magnam fugit at maxime quis? Veniam nam similique corporis quasi
+    laboriosam!<br><br>
+    Iusto nostrum nisi dicta voluptatibus ratione dolor explicabo, officia facilis minima eos laudantium saepe
+    veritatis? Vitae labore soluta debitis voluptate, unde laboriosam. Dolorum libero ex pariatur blanditiis nostrum
+    nemo vitae!<br><br>
+    Libero doloremque tempore facilis eveniet corrupti maxime amet odit molestiae, est inventore modi deserunt nulla
+    itaque ut natus quae animi accusamus et blanditiis eum. Quo facere laudantium ex fugiat aliquam?
+    Dolores obcaecati voluptate qui incidunt mollitia repellat veniam! Porro quae nostrum, esse excepturi debitis eos
+    reiciendis placeat, adipisci fugit ab similique! Molestiae deleniti iusto velit commodi ad, laudantium repellat.
+    Numquam.<br><br>
+    Voluptatum laudantium omnis dolore tempora mollitia maxime illum quas earum. Blanditiis nihil sint nesciunt ipsam
+    hic, illo excepturi. Cum sunt amet commodi obcaecati eaque at? Possimus nisi in aperiam cumque.
+    Hic eligendi quis facilis quam id animi accusamus, provident aspernatur dolor saepe cumque qui atque quae nemo quo,
+    corrupti nesciunt explicabo? Delectus soluta repellendus quo temporibus minus sit pariatur ab.<br><br>
+    Reprehenderit officiis dicta ratione sunt corporis ad cupiditate voluptate consequuntur. Praesentium sint maiores
+    debitis numquam ea cumque dignissimos quod, enim quaerat ipsum. Fugiat, adipisci quae necessitatibus ab explicabo
+    cumque esse.<br><br>
+    Voluptatem cumque porro veniam, et pariatur tenetur? Exercitationem earum aspernatur dicta accusantium, eum
+    necessitatibus provident minus! Blanditiis laboriosam modi accusantium, unde deserunt recusandae, repudiandae a
+    architecto dolores iure nulla explicabo.
+  </p>
+</section>
