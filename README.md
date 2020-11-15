@@ -7,7 +7,7 @@ From C3 Data Lake Source: https://c3.ai/covid-19-api-documentation/#section/C3.a
 Policy Detail- 	University of Oxford: Coronavirus Government Response Tracker
 Link: https://www.bsg.ox.ac.uk/research/research-projects/coronavirus-government-response-tracker
 
-Clinical Data - The University of Montreal: COVID-19 Image Data Collection (Diagnosis, DiagnosisDetail)
+Clinical Data (Images) - The University of Montreal: COVID-19 Image Data Collection (Diagnosis, DiagnosisDetail)
 Link: https://github.com/ieee8023/covid-chestxray-dataset
 File: COVID19 CT scan Images
 
@@ -25,6 +25,18 @@ Link:
     https://console.cloud.google.com/bigquery?p=bigquery-public-data&d=covid19_weathersource_com&t=county_day_history&page=table&project=zippy-card-293323&folder=&organizationId=
     https://console.cloud.google.com/storage/browser/fadi_c3_weather_data
 
+Additional Data Sources for CT Scan Deep Learning Project
+---
+COVID19 CT Scan from Kaggle 1:
+Source:
+SARS-COV-2 Ct-Scan Dataset
+A large dataset of CT scans for SARS-CoV-2 (COVID-19) identification. Collected from real patients in hospitals from Sao Paulo, Brazil.
+https://www.kaggle.com/plameneduardo/sarscov2-ctscan-dataset
+
+COVID19 CT Scan from Kaggle 2:
+Source:
+COVID-19 Lung CT Scans COVID-CT-Dataset: A CT Scan Dataset about COVID-19. Collected from COVID19-related papers from medRxiv, bioRxiv, NEJM, JAMA, Lancet, etc. CTs containing COVID-19 abnormalities are selected by reading the figure captions in the papers.
+https://www.kaggle.com/luisblanche/covidct
 
 ---
 Other Data Sources:
