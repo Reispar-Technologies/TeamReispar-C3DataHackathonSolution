@@ -1,0 +1,58 @@
+﻿```
+from tensorflow.keras.applications import EfficientNetB6
+import tensorflow as tf
+from tensorflow import keras
+from tensorflow.keras.models import Model
+from tensorflow.keras import layers
+from tensorflow.keras.preprocessing import image
+from tensorflow.keras.layers import Input, Dense, BatchNormalization, Dropout, GlobalAveragePooling2D
+from tensorflow.keras.optimizers import Adam
+from tensorflow.keras.callbacks import ModelCheckpoint
+import os, cv2
+
+
+ROWS = 256
+COLS = 256
+Channel = 3
+# create the base pre-trained model
+base_model = EfficientNetB6(weights='imagenet', include_top=False, input_tensor=Input(shape=(ROWS, COLS, 3)))
+
+
+x = base_model.output
+x = GlobalAveragePooling2D()(x)
+# # let's add a fully-connected layer
+x = Dense(2024, activation='relu')(x)
+x = BatchNormalization()(x)
+x = Dropout(0.2)(x)
+x = Dense(512, activation='relu')(x)
+x = BatchNormalization()(x)
+x = Dropout(0.2)(x)
+x = Dense(128, activation='relu')(x)
+x = BatchNormalization()(x)
+x = Dropout(0.1)(x)
+# and a logistic layer -- let's say we have 200 classes
+predictions = Dense(2, activation='softmax')(x)
+
+
+# this is the model we will train
+model = Model(inputs=base_model.input, outputs=predictions)
+
+
+# The model weights (that are considered the best) are loaded into the model
+model.load_weights('dir + COVID19_EfficientNetB6_model.h5') 
+```
+
+
+
+
+
+
+```
+# to read an image we need the directory and it can be jpeg or png
+img = cv2.imread('ImageDirPath', cv2.IMREAD_COLOR) #cv2.IMREAD_GRAYSCALE
+img = cv2.resize(img, (ROWS, COLS), interpolation=cv2.INTER_CUBIC)
+image = tf.reshape(img,(-1, ROWS, COLS,3))
+preds = model.predict(image) # Predict image
+print(preds,round(preds[0][0],0))
+print('Confidence percentile %s %% ,it is Predicted: %s' %(round(max(preds[0][0:2]),2),round(preds[0][0],0)))
+```
