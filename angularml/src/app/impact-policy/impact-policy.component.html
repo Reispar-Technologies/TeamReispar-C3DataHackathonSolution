@@ -1,0 +1,111 @@
+      <!-- Impact Heading -->
+      <section class="wrapper policy-impact-analysis">
+        <h1 class="text-center">Analysing the Policy Data on Some Selected Countries in Second Lockdown</h1>
+        <p>
+ Our team decided to perform some analysis on the Policy dataset found on the C3 Data Lake (Government Response Tracker).  Understanding how government policies affected either the mitigation or the spread of the virus was our concern. <br><br>
+In performing this analysis, we made use of six countries who had flung back into  a second Lockdown due to the surge of Covid19 as at November 2nd, 2020, Time: 7:07 am WAT (France, Belgium, Germany, UK, Czech & Ireland) as well as Taiwan who reported no covid19 case in 200 days as a October 28th, 2020. <br><br>  The Taiwan case is a marvel, that’s why we decided to see how government policies played in correlation with the other countries in second lockdown. <br><br>
+
+As reported by Bloomberg on October 28th, 2020, “France and Germany are going back into lockdown, while coronavirus cases in the U.S. surging to new highs, but at the other end of the world Taiwan has achieved a different kind of record -- more than 200 days without a locally transmitted case. <br><br>
+Taiwan holds the world’s best virus record by far and reached the 200-day landmark on Thursday. Its last local case came on April 12; there has been no second wave. On Friday, it reached 201 days without a local case.”
+</p>
+
+<div>
+  <img src="/assets/images/covid-impact/policy-analysis/policy-analysis1.png" alt="">
+</div>
+
+<p>
+  Taiwan has recorded only 7 deaths from the Coronavirus (as of November 14th, 2020; 12:02PM WAT) out of their 600 total cases of which 535 have recovered leaving only 58 Active Cases. Taiwan has a population of 23.78 million which is higher than the population of Czech Republic (10.6 million) which has recorded 5, 926 total deaths from the virus and higher than the population of Belgium (11.46 million) with 525, 012 total confirmed covid19 cases and 14, 106 deaths from the virus. <br><br>
+
+After performing numerical data distribution which can be seen in detail in our Policy Data Colab notebook, we found features which are strongly correlated with ConfirmedCases and ConfirmedDeaths. 
+
+</p>
+
+<div class="flex row">
+  <div class="col-md-6">
+    <img src="/assets/images/covid-impact/policy-analysis/policy-analysis2.png" alt="">
+  </div>
+
+  <div class="col-md-6">
+    <img src="/assets/images/covid-impact/policy-analysis/policy-analysis3.png" alt="">
+  </div>
+</div>
+
+<p>
+  We then removed the outliers from the cleaned data and performed another correlation analysis to ConfirmedCases on the Policy dataset. 
+</p>
+
+<div>
+  <img src="/assets/images/covid-impact/policy-analysis/policy-analysis4.png" alt="" class="smallImage">
+</div>
+
+<p>
+  There is a positive strong relationship of ConfirmedCases to; Restrictions on gathering, International Travels controls, Testing Policy, Facial Coverings and Debt/Contract Relief while Fiscal Measures and Emergency Investment in health care by the selected countries are weakly negatively correlated.
+</p>
+
+<br><br><h6>Covid19 Tabular data of the Selected Countries in Phase Two Lockdown <em>(including Taiwan which isn’t in Lockdown)</em>
+</h6>
+
+<div class="taiwan-table">
+  <img src="/assets/images/covid-impact/policy-analysis/policy-analysis5.JPG" alt="" class="smallImage">
+  <p><strong>Data is as of 11:34am WAT November 14th, 2020</strong></p>
+</div>
+<br><br>
+<h6>Some Shocking discovery on Taiwan’s Policy Index to the other countries in current lockdown
+</h6>
+<p>
+The Uk has recorded 1, 317, 496 million total cases with a recent spike increase from September 19th, 2020  with over 50, 500 plus deaths one of the highest in the world.
+If we compare Taiwan to; France, Germany, Czech, Uk and Ireland we will discover some very fascinating insights about these countries' respective policy data. Let’s take a look at the policy data relationship.
+
+</p>
+
+<div class="flex policy-data-relationship">
+  <div class="">
+    <img src="/assets/images/covid-impact/policy-analysis/policy-analysis6_figure_a.png" alt="">
+  </div>
+  <h6>Figure A</h6>
+
+  <div>
+    <img src="/assets/images/covid-impact/policy-analysis/policy-analysis7_figure_b.png" alt="">
+  </div>
+  <h6>Figure B</h6>
+
+  <div>
+    <img src="/assets/images/covid-impact/policy-analysis/policy-analysis8_figure_c.png" alt="">
+  </div>
+  <h6>Figure C</h6>
+
+  <div>
+    <img src="/assets/images/covid-impact/policy-analysis/policy-analysis9_figure_d.png" alt="">
+  </div>
+  <h6>Figure D</h6>
+
+</div>
+
+<p>
+  <strong>
+    Please note: <br>
+    Stringencies and Policy Indices: <br>
+  </strong>
+
+“OxCGRT collects publicly available information on 18 indicators of government responses. Eight of the policy indicators (C1-C8) record information on containment and closure policies, such as school closures and restrictions in movement. Four of the indicators (E1-E4) record economic policies, such as income support to citizens or provision of foreign aid. Six of the indicators (H1-H6) record health system policies such as the COVID-19 testing regime or emergency investments into healthcare.” Source <a href="https://www.bsg.ox.ac.uk/research/research-projects/coronavirus-government-response-tracker">link</a> <br><br>
+
+Please note that these indices simply record the number and strictness of government policies. <br><br> 
+
+<strong>C - Containment & Closures policies </strong><br><br>
+<strong>E - Economic Support Policies </strong><br><br>
+<strong>H - Public Health Policies </strong><br><br>
+Cross Examining the Selected Countries Strictness to Covid19 with the indicators in the pictures from Figure A-D we find; <br><br>
+
+<strong>Key Findings:</strong> Plotting some key features that show some degree of correlation with confirmed cases for the Six new lockdown countries including Taiwan that went 200 days without any record of Covid19. <br><br>
+<strong>Facial Coverings:</strong> We see Germany and Island with the least and the Uk with the highest measure. <br><br>
+<strong>Restrictions on Gathering:</strong> The UK having the highest government policy measure with Taiwan at zero. <br><br>
+<strong>Government Response Index for Display:</strong> Taiwan having the least measure with UK having the highest at 10 <br><br>
+<strong>Debt/Contract Relief:</strong> Germany and Taiwan the lowest while UK the highest in terms of government policy index on debt/contract relief. <br><br>
+<strong>Close Public Transport:</strong> Belgium, Czech Republic, Germany, and Taiwan had no value on their governments response measure to closure of public transport as against France, Ireland and the UK. <br><br>
+<strong>International Travel Controls: </strong><br><br>
+<strong>Fiscal Measures: </strong><br><br>
+<strong>Emergency Investment in Health Care:</strong>
+
+</p>
+
+      </section>

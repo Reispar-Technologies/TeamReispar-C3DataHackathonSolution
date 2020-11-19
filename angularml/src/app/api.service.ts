@@ -8,7 +8,8 @@ import { Observable } from 'rxjs';
 export class ApiService {
     // https://covidreisparbe.herokuapp.com/route/image/ to be replaced to connect to the BE
     // http://127.0.0.1:8000/route/image/ for local server
-  url = "https://covidreisparbe.herokuapp.com/route/image/"
+    // https://a1535d6b2db5.ngrok.io
+  url = "http://127.0.0.1:8000/route/image/"
   
   httpHeaders = new HttpHeaders({'Content-Type':"application/json"})
 
