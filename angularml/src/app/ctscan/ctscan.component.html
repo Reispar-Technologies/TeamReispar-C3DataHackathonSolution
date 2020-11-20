@@ -1,0 +1,162 @@
+<!-- Page Heading -->
+<section class="wrapper ct-scan-heading">
+  <h1 class="text-center">CT-SCAN</h1>
+  <p>Instructions:</p>
+  <ul>
+    <li>You can upload a chest ct scan image to be investigated by AI for COVID-19 detection.</li>
+    <li>Accepted image format is jpg, jpeg or png.</li>
+    <li>The AI will return a result 0 for COVID-19_negative or 1 for COVID-19_positive with a confidence percentile.
+    </li>
+    <li>The current accuracy percentile for the AI is 91% so there is a possibility for 1 false out of 10 results
+      depending on the ct-scan image quality and clarity. (All results can be correct)</li>
+  </ul>
+
+
+
+</section>
+
+
+
+<!-- Image Upload Section -->
+<section class="ct-scan-uploadSection wrapper">
+  <div class="row flex card">
+
+    <div class="uploadSection-upload col-sm-12 col-md-6">
+      <div name="imageUpload" id="ctScanForm" class="card">
+        <div class="form-control">
+          <input type="file" (change)="onImagechange($event)" name="Choose Image" class="">
+        </div>
+        <div class="progress" *ngIf="progress">
+          <div class="progress-bar" [style.width]="progress + '%'">{{progress}}%</div>
+        </div>
+        <!-- Input button -->
+        <input type="submit" value="Submit Image" class="btn btn-primary" name="submit" [disabled]="!image"
+          (click)="newImage()">
+
+      </div>
+
+      <div *ngIf="message=='Upload Completed'" class="alert alert-success" role="alert">
+        {{ message }}
+      </div>
+      <div *ngIf="message=='Upload failed'" class="alert alert-danger" role="alert">
+        {{ message }}
+      </div>
+    </div>
+
+    <div *ngIf="imagearray.prediction==''" class="uploadSection-preview col-sm-12 col-md-6">
+      <img src="https://via.placeholder.com/200x100/000000/FFFFFF/?text=upload image here" alt="placeholder"
+        id="previewImage">
+    </div>
+    <div *ngIf="imagearray.prediction!=''" class="uploadSection-preview col-sm-12 col-md-6">
+      <img src="{{imagearray.image}}" alt="placeholder" id="previewImage">
+    </div>
+  </div>
+</section>
+
+
+<section class="wrapper ct-scan-result" *ngIf="imagearray.prediction!=''">
+  <h2 class="text-center"></h2>
+
+
+  <div class="result-wrapper flex">
+
+    <div class="card flex">
+
+      <div class="card-heading">
+        <h5 class="card-title">Scan Result</h5>
+      </div>
+
+      <div class="card-body">
+        <p class="card-text" id="ctScanResult1"> {{prediction}}</p>
+      </div>
+
+    </div>
+
+    <div class="card flex">
+
+      <div class="card-heading">
+        <h5 class="card-title">Confidence Of Covid</h5>
+      </div>
+
+      <div class="card-body">
+        <p class="card-text" id="ctScanResult2">{{confidence}}%</p>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="result-wrapper flex">
+    <div class="card flex">
+      <div *ngIf="prediction===0">
+        <div class="card-heading">
+          <h5 class="card-title">Scan Result</h5>
+        </div>
+        <div class="card-body">
+          <p class="card-text" id="ctScanResult1">Negative Covid</p>
+        </div>
+      </div>
+
+
+        <div *ngIf="prediction===1">
+          <div class="card-heading">
+            <h5 class="card-title">Scan Result</h5>
+          </div>
+          <div class="card-body">
+            <p class="card-text" id="ctScanResult1">Positive Covid</p>
+          </div>
+        </div>
+
+
+    </div>
+    </div>
+
+</section>
+
+<section class="ct-scan-result-analysis wrapper">
+
+  <h2 class="text-center"></h2>
+  <p>Notes:</p>
+
+  <ol>
+    <li>COVID-19 Ct-Scan detector is in experiment phase to help fast detection of COVID-19 but the output result can't
+      be considered yet as final confirmed result. Medical reference is the final trusted reference for result
+      confirmation.</li>
+    <li>You are welcome to challenge the AI with other than ct scan images. but the expected result will probably be
+      always 1, as an unrecognized image were the model is train and recognize
+      ct scan images only.</li>
+    <li>We appreciate your support and feedback of confirming the result to help us develop the AI.</li>
+  </ol>
+
+</section>
+
+<section class=" wrapper ct-scan-summary">
+  <h2>Summary</h2>
+  <p>
+    First we prepare the data following below steps: </p>
+
+  <ol>
+    <li>Import COVID-19/Non_COVID-19 images files names into a train DataFrame with their labels. Then coping the last
+      rows for testing DataFrame and delete them from the train df.
+    </li>
+    <li>Shuffle training dfs, converting each to tensors and join all three train dfs into one big train df shape (3456,
+      256, 256, 3), and test (700)
+    </li>
+    <li>Apply Data Augmentation (random rotation, shift, flip, zoom, shear transforms) on all three datasets images
+      generating new 2000 images for generalizing the model as much as possible.
+    </li>
+    <li>Join new images' dataset, after importing them to df and convert to tensors. the final training/testing dfs
+      (5535, 256, 256, 3) ,and testing (1100, 256, 256, 3).
+    </li>
+    <li>Import pretrained model “EfficientNetB6” from tensorflow.keras.applications and add our input shape (256,256,3),
+      full connected layers (2048, 512,128) with ReLu as activation function, plus BatchNormalization with dropout (0.1
+      or 0.2) methods each. Finally, output layer for 2 classes with softmax as activation functions.
+    </li>
+    <li> Train the data and save the weights for best max val_accurecy or min loss metrics.
+    </li>
+    <li>Fine tune the model with extra very low learning rate for the optimization function.
+    </li>
+    <li>Test the result and achieve high accuracy 91% on the testing 1100 images.
+    </li>
+  </ol>
+
+</section>
