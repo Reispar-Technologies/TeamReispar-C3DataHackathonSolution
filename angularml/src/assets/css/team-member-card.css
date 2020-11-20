@@ -119,7 +119,7 @@
         background-color: rgba(0, 0, 0, 0.6);
       }
       .news-card:hover .news-card__title {
-        color: var(--text-color);
+        color: var(--link-color);
       }
       .news-card:hover .news-card__image {
         transform: scale(1.1);

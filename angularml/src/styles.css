@@ -19,7 +19,7 @@
 }
 
 body{
-    font-family: 'Lato', sans-serif;
+    font-family: Cambria, 'Lato', sans-serif;
     color: #081f2c;
     background-color: white;
 }
@@ -35,13 +35,33 @@ a{
 a:hover{
     text-decoration: none;
 }
-h1, h2{
-    font-weight: 300;
-    line-height: 1.2;
-    margin: 10px 0px;
+h1, h2, h3, h4, h5, h6{
+    margin: 0px 0px 0.5em 0em;
+    font-weight: 600;
+    padding: 0em;
+}
+h1{
+    font-size: 2em;
+}
+h2{
+    font-size: 1.875em;
+}
+h3{
+    font-size: 1.75em;
+}
+h4{
+    font-size: 1.625em;
+}
+h5{
+    font-size: 1.5em;
+}
+h6{
+    font-size: 1.375em;
 }
 p{
     margin: 10px 0px;
+    font-size: 1.125em;
+    font-weight: 450;
 }
 img{
     width: 100%;
@@ -51,11 +71,6 @@ img{
     padding: 0%;
     margin: 0%;
     justify-self: center;
-}
-code, pre{
-    background-color: #000;
-    color: #fff;
-    padding: 10px;
 }
 .navbar .navbar-toggler{
     border: none;
@@ -69,6 +84,21 @@ code, pre{
     padding: 0%;
     margin: 0%;
 }
+.navbar .dropdown .dropdown-item:active{
+    background-color:transparent;
+}
+.navbar .dropdown .dropdown-item{
+    background-color:transparent;
+}
+.embedded-file{
+    width: 100%;
+}
+#navbarSupportedContent{
+    background-color: var(--primary-color);
+}
+.wrapper{
+    padding: 0em 7em;
+}
 
 
 /* Navbar Stylings */
@@ -78,7 +108,8 @@ code, pre{
     padding-bottom: 10px;
     margin: 0%;
     width: 100%;
-    /* height: 10vh; */
+    /* position: fixed; */
+    /* z-index: 10000; */
 }
 
 .navbar .wrapper {
@@ -100,7 +131,7 @@ code, pre{
     color: var(--link-color);
     padding: 5px;
     margin: 0 5px;
-    font-weight: bold;
+    /* font-weight: bold; */
     /* border-bottom: 2px solid white; */
 }
 
@@ -116,9 +147,12 @@ code, pre{
 }
 .navbar .dropdown:hover .dropdown-menu {
     display: block;
-    color: red;
+    margin-top: 0%;
+    padding-top: 0%;
 }
-
+.navbar .dropdown:hover{
+    display: block;
+}
 .navbar-nav a:hover{
     border-bottom: 1.5px solid var(--link-color);
 }
@@ -127,14 +161,15 @@ code, pre{
     border-bottom: 1.5px solid var(--link-color);
 }
 
+
 /* mainContent Section */
 .mainContent{
     color: var(--text-color);
     margin: 0%;
     padding-bottom: 1em;
     padding-top: 1em;
-    background: url(/assets/images/covidbg.jpg);
-    background-size: contain;
+    background: url(/assets/images/covidbg2.jpg);
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     position: relative;
@@ -146,19 +181,15 @@ code, pre{
     position: absolute;
     left: 0; right: 0;
     top: 0; bottom: 0;
-    background: rgba(0,0,0,0.7);
+    background: rgba(255, 255, 241, 0.45);
 }
 .mainContent h1{
     font-size: 2rem;
-    color: var(--link-color);
-    font-weight: bold;
-}
-.mainContent p{
-    margin: 20px 0;
-    font-size: 1.25rem;
     color: var(--text-color);
-    font-weight: 600;
+    margin: 0em 0em 0.5em 0em;
+    align-self: center;
 }
+
 .mainContent a:hover{
     color: var(--link-color)
 }
@@ -167,79 +198,62 @@ code, pre{
     animation: slideInFromLeft 1s ease-in;
     padding: 0%;
     margin: 0%;
+    flex-direction: column;
+    align-items: flex-start;
 }
 .mainContent-text p{
-    color: var(--link-color);
+    color: var(--text-color);
+    font-size: 1.5em;
 }
-.mainContent-ctScan{
-    animation: slideInFromRight 1s ease-in;
-    align-items: center;
-    padding: 1em 0.5em;
-    margin: 0%;
+.mainContent-text ul{
+    margin-bottom: 1.5em;
+    margin-left: 1.5em;
 }
-.mainContent-ctScan #previewImage{
-    max-width: 75%;
+.mainContent-text ul li{
+    font-size: 1.25em;
+    font-weight: 450;
+    margin: 0.25em 1em;
+    list-style-type: disc;
 }
-.mainContent-ctScan form{
-    width: 100%;
-    padding: 0em 0.5em;
+.mainContent-text ul li i:hover{
+    color: #007bff;
 }
-.mainContent-ctScan p,h3{
-    color: #000;
+.mainContent-text ul li i{
+    color: var(--primary-color);
+    font-size: 0.75em;
+    margin-left: 0.5em;
 }
-.mainContent-ctScan p{
-    font-size: 1em;
-    font-weight: normal;
-    margin: 0%;
-    padding: 0 0 1em 0;
+.mainContent-text p i{
+    color: var(--primary-color);
 }
-.mainContent-ctScan .form-control {
-    margin: 1.5em 0em;
-    width: 100%;
-    height: 100%;
-    padding: 0%;
-}
-  
-.mainContent-ctScan .form-control input[type='file'] {
-    width: 100%;
-    margin: 0;
-    font-size: 1em;
-    padding: 0em;
-}
-  
-.mainContent-ctScan input:focus {
-    outline: none;
+.mainContent-text .btn{
+    align-self: center;
 }
 
-.mainContent-ctScan #myProgress {
-    width: 100%;
-    background-color: #ddd;
-    margin: 1em 0em;
-}
-  
-.mainContent-ctScan  #myBar {
-    width: 0%;
-    height: 30px;
-    background-color: #4CAF50;
-    text-align: center;
-    line-height: 30px;
-    color: white;
-}
+
 
 /* CT-Scan Page */
 .ct-scan-heading{
     margin: 2em 0em;
 }
 .ct-scan-heading h1{
-    font-weight: bold;
+    margin-bottom: 0.75em;
 }
 .ct-scan-heading p{
-    /* line-height: 2em; */
-    font-size: 1.25em;
+    padding: 0%;
+}
+.ct-scan-heading ul{
+    margin-left: 1.5em;
+}
+.ct-scan-heading ul li{
+    margin: 0.25em 0em;
+    list-style-type: disc;
+    font-size: 1.125em;
+    font-style: italic;
+    font-weight: 550;
 }
 .ct-scan-uploadSection{
     margin: 1em 0em 3em 0em;
-    /* background-color: whitesmoke; */
 }
 .ct-scan-uploadSection .flex{
     flex-direction: row;
@@ -281,7 +295,11 @@ code, pre{
     line-height: 30px;
     color: white;
 }
-
+.ct-scan-uploadSection .uploadSection-upload .errorNotification {
+    color: red;
+    font-size: 1em;
+    display: none;
+}
 .ct-scan-uploadSection .uploadSection-preview{
     padding: 0%;
     margin: 0%;
@@ -292,86 +310,343 @@ code, pre{
 }
 
 .ct-scan-result{
-    margin: 0em 0em 2em 0em;
+    margin: 0em 0em 3em 0em;
 }
-.ct-scan-result h3{
-    font-weight: bold;
+.ct-scan-result h2{
+    margin: 0%;
+    padding: 0%;
 }
 .ct-scan-result p{
+    padding: 0%;
+}
+.ct-scan-result .result-wrapper{
+    margin: 0%;
+    padding: 0%;
+    justify-content: center;
+}
+.ct-scan-result .result-wrapper .card{
+    flex-direction: column;
+    margin: 1em;
+    width: 30%;
+}
+.ct-scan-result .result-wrapper .card .card-heading{
+    padding: 0%;
+    margin: 0em 0em 1em 0em;
+}
+.ct-scan-result .result-wrapper .card .card-body{
+    padding: 0%;
+    margin: 0%;
+}
+.ct-scan-result .result-wrapper .card .card-title{
+    font-size: 1.5em;
+    padding: 0%;
+    margin: 0%;
+}
+.ct-scan-result .result-wrapper .card .card-text{
+    font-size: 1.75em;
+    font-weight: 550;
+    color: #007bff;
+    padding: 0%;
+    margin: 0%;
+}
+
+.ct-scan-result-analysis{
+    margin: 0em 0em 3em 0em;
+}
+.ct-scan-result-analysis h2{
+}
+.ct-scan-result-analysis p{
+    padding: 0%;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+.ct-scan-result-analysis ol{
+    margin-left: 1.75em;
+}
+.ct-scan-result-analysis ol li{
+    margin: 0.5em 0em;
+    padding-left: 0.5em;
+    font-style: italic;
+    font-size: 1.125em;
+    
+}
+
+.ct-scan-summary{
+    margin: 0em 0em 3em 0em;
+}
+.ct-scan-summary h2{
+}
+.ct-scan-summary p{
+    padding: 0%;
+}
+.ct-scan-summary ol{
+    margin: 0.5em 0em 0em 1em;
+}
+.ct-scan-summary ol li{
     font-size: 1.25em;
+    padding-left: 0.5em;
+    text-align: justify;
 }
 
 /* Analytics Page */
-.analytics-main{
+/* Forecasting */
+.analytics-forecasting{
     background-color: var(--body-bg);
     flex-direction: column;  
-    margin: 5px 0px 20px 0px;  
+    align-items: flex-start;
+    margin: 1em 0px 4em 0px;  
 }
-.analytics-main h1{
+.analytics-forecasting h1{
     margin: 10px 0 0px 0px;
     font-size: 2em;
     font-weight: bold;
+    align-self: center;
 }
-.analytics-main p{
+.analytics-forecasting h5{
     margin: 10px 0 0px 0px;
-    font-weight: 600;
-    font-size: 1.25em;
-}
-.analytics-main .card{
-    width: 100%;
-    min-height: 20vh;
+    align-self: center;
 }
 
-.analytics-main .card img{
-    width: 20%;
+.analytics-forecasting .forecasting-summary ul{
+    margin: 1.25em 0em 0em 0em;
+    text-align: left;
+    align-self: flex-start;
 }
+.analytics-forecasting .forecasting-summary ul p{
+    font-size: 1.2em;
+    font-weight: 550;
+}
+.analytics-forecasting .forecasting-summary li{
+    font-size: 1.1em;
+    font-weight: 500;
+}
+.analytics-forecasting .forecasting-countries{
+    margin-top: 2em;
+}
+.analytics-forecasting .forecasting-countries h5{
+    margin: 0.75em 0em 0em 0em;
+    padding: 0%;
+    font-size: 1em;
+    font-weight: 600;
+    color: rgb(240, 173, 48);
+}
+.analytics-forecasting .forecasting-countries small{
+    padding: 0em 0em 10em 0em;
+    /* padding: 0%; */
+    font-weight: 550;
+    font-size: 0.9em;
+    /* line-height: 0em; */
+}
+.analytics-forecasting .forecasting-graphs{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2em;
+    width: 100%;
+}
+.analytics-forecasting .forecasting-graphs h3{
+    margin: 1em 0em 0.5em 0em;
+}
+.analytics-forecasting .forecasting-graphs div{
+    display: flex;
+    margin: 1.25em 0em;
+    width: 100%;
+}
+
+
+/* Analytics - Covid Correlation  */
+.analytics-covid-correlation{
+    flex-direction: column;
+    margin-bottom: 3em;
+}
+.analytics-covid-correlation h1{
+    margin: 0.5em 0em 1em 0em;
+}
+.analytics-covid-correlation h2{
+    margin: 0.5em 0em 0em 0em;
+}
+.analytics-covid-correlation h6{
+    margin: 0.5em 0em 0em 0em;
+}
+.analytics-covid-correlation ul{
+    margin: 1em 0em 1em 0em;
+}
+.analytics-covid-correlation ul li{
+    font-size: 1.1em;
+    font-style: italic;
+    font-weight: 500;
+}
+.analytics-covid-correlation div{
+    margin: 1em 0em 1em 0em;
+    width: 100%;
+}
+.analytics-covid-correlation div img{
+    margin: 0em;
+    padding: 0%;
+    width: 100%;
+}
+.analytics-covid-correlation h2{
+    align-self: flex-start;
+}
+
+
+
+/* Analytics - Intervention efficiency */
+.analytics-intervention-efficiency {
+    flex-direction: column;
+    margin-bottom: 3em;
+}
+.analytics-intervention-efficiency h1{
+    margin: 1em 0em;
+}
+
+.analytics-intervention-efficiency h2{
+    margin: 0.5em 0em 0.5em;
+    text-align: center;
+}
+.analytics-intervention-efficiency .all-intervention{
+    margin-bottom: 1.5em;
+}
+.analytics-intervention-efficiency .all-intervention div{
+    padding: 0.5em;
+    width: 100%;
+}
+.analytics-intervention-efficiency h6{
+    margin: 1em 0em;
+}
+.analytics-intervention-efficiency .row{
+    margin: 0em 0em 1em 0em;
+}
+
+
+
+/* Analytics - Infection and Death statistics */
+
+.analytics-infection-death-statistics{
+    flex-direction: column;
+    margin-bottom: 3em;
+}
+.analytics-infection-death-statistics h1{
+    margin-top: 0.75em;
+}
+.analytics-infection-death-statistics ul{
+    margin: 1.25em 0em 1.25em 0em;
+    text-align: left;
+    align-self: flex-start;
+}
+.analytics-infection-death-statistics ul p{
+    font-size: 1.2em;
+    font-weight: 550;
+}
+.analytics-infection-death-statistics ul li{
+    font-size: 1.1em;
+    /* font-style: italic; */
+    font-weight: 500;
+}
+.analytics-infection-death-statistics div{
+    margin: 1em 0em 1em 0em;
+    width: 100%;
+}
+
+
 
 /* Covid Impact Section */
-.impact-heading{
-    margin-bottom: 30px;
+        #economic-health-page{
+            padding: 0%;
+            margin: 0%;
+            height: 82.5vh;
+        }
+        #economic-health-page .navbar{
+            height: 8.5vh;
+            position: relative;
+        }
+        #economic-health-page .impact-heading{
+            background-color: black;
+            color: white;
+            height: 5.5vh;
+            margin: 0%;
+            padding: 0%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        } 
+        .impact-heading h1{
+            margin: 0em 0em 0em 0em;
+            padding: 0%;
+            font-size: 1.5em;
+        }
+        #economic-health-page .economic-health-embedded-file-div{
+            height: 78vh;
+            margin: 0%;
+            padding: 0em;
+            overflow-y: hidden;
+        }
+        #economic-health-page .economic-health-embedded-file{
+            height: 100%;
+            width: 100%;
+        }
+        #spinnerDiv{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+        }
+        #spinnerDiv img{
+            width: fit-content;
+        }
+        #economic-health-page .footer{
+            height: 7vh;
+            margin: 0%;
+            padding: 0%;
+        }
+
+        
+
+/* Policy Impact */
+
+.policy-impact-analysis{
+    margin-bottom: 3em;
 }
-.impact-heading h1{
+.policy-impact-analysis h1{
+    margin: 1em 0em 0.75em 0em;
+}
+.policy-impact-analysis div{
+    margin: 1em 0em;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.policy-impact-analysis .taiwan-table{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1em;
+}
+.policy-impact-analysis div img{
+    width: 75%;
+}
+.policy-impact-analysis div .smallImage{
+    width: 50%;
+}
+.policy-impact-analysis h6{
     margin-bottom: 0px;
+    text-align: left;
+}
+.policy-impact-analysis .policy-data-relationship{
+    flex-direction: column;
+}
+.policy-impact-analysis .policy-data-relationship div img{
+    width: 100%;
+}
+.policy-impact-analysis .policy-data-relationship h6{
+    align-self: center;
     padding: 0%;
-    font-size: 2em;
-    font-weight: bold;
+    margin: 0em 0em 1.25em 0em;
 }
-.impact-heading p{
-    margin-top: 0px;
-    padding: 0%;
-    font-size: 1.25em;
-    font-weight: bold;
-}
-.economic-impact{
-    margin-bottom: 30px;
-}
-.economic-impact h3{
-    margin-bottom: 0px;
-    padding: 0%;
-    font-size: 1.75em;
-    font-weight: bold;
-}
-.economic-impact p{
-    margin-top: 0px;
-    padding: 0%;
-    font-size: 1.25em;
-    font-weight: bold;
-}
-.health-impact{
-    margin-bottom: 30px;
-}
-.health-impact h3{
-    margin-bottom: 0px;
-    padding: 0%;
-    font-size: 1.75em;
-    font-weight: bold;
-}
-.health-impact p{
-    margin-top: 0px;
-    padding: 0%;
-    font-size: 1.25em;
-    font-weight: bold;
-}
+
+
+
 
 /* Data Sources Section */
 .data-sources-section{
@@ -380,10 +655,10 @@ code, pre{
 .data-sources-section h1{
     font-size: 2em;
     font-weight: bold;
-    margin-top: 1em;
+    margin-top: 0.5em;
 }
 .data-sources-section .intro{
-    font-size: 1.25em;
+    font-size: 1.125em;
     margin-bottom: 1em;
     font-weight: bold;
 }
@@ -400,6 +675,7 @@ code, pre{
     width: 100%;
     flex-direction: column;
     transition: 0.4s ease-in;
+    /* min-height: 25em; */
 }
 .data-sources-section .card-wrapper .card:hover{
     transform: scale(1.05);
@@ -409,6 +685,7 @@ code, pre{
     padding: 0em;
     margin: 0%;
     width: 100%;
+    /* height: 50%; */
     display: flex;
 }
 
@@ -417,21 +694,24 @@ code, pre{
     padding: 0%;
     display: flex;
     align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
 }
 .data-sources-section .card-wrapper .icon-div img{
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    /* height: 100%; */
+    object-fit: contain;
 }
 .data-sources-section .card-wrapper .source-title-div{
     padding: 0%;
     margin: 0%;
     text-align: left;
     display: flex;
-    align-items: flex-end;
+    align-items: center;
 }
 .data-sources-section .card .card-title{
-    font-size: 2em;
+    font-size: 1.75em;
     font-weight: bold;
     margin: 0.5em 0em 0em 0.5em;
 }
@@ -441,44 +721,99 @@ code, pre{
     margin: 0%;
     display: flex;
     flex-direction: column;
+    align-self: flex-start;
+    width: 100%;
+}
+
+.data-sources-section .card .card-body a{
+    display: flex;
+    flex-direction: column;
+}
+.data-sources-section .card .card-body .card-text:hover{
+    /* text-decoration: underline; */
+    color: #007bff;
 }
 .data-sources-section .card-body .card-text{
     font-size: 1.25em;
     line-height: 1.25em;
     margin: 0.5em 0em;
-    font-weight: bold;
+    font-weight: 500;
+    color: var(--text-color);
 }
 .data-sources-section .card-body small{
-    font-size: 1.125em;
-    text-align: right;
+    font-size: 1em;
+    align-self: flex-end;
     font-weight: bold;
 }
+.data-sources-section .smallfont .card-text{
+    font-size: 1.1em;
+    line-height: 0.85em;
+}
+
 
 /* Project Overview Section */
 .project-overview-content{
-    margin: 1.5em 0em;
+    margin: 1.5em 0em 4em 0em;
+
 }
 .project-overview-content h1{
-    font-size: 2em;
-    font-weight: bold;
 }
 .project-overview-content p{
     margin-bottom: 1em;
-    font-size: 1.25em;
-    font-weight: bold;
+    font-size: 1.325em;
+}
+.project-overview-content ol{
+    margin: 0em 0em 1.25em 0em;
+    text-align: left;
+    align-self: flex-start;
+}
+.project-overview-content ol li{
+    font-size: 1.125em;
+    font-weight: 500;
+    margin-left: 2em;
+    padding-left: 1em;
+    font-weight: 550;
+}
+.project-overview-content ul{
+    margin: 0em 0em 1.25em 0em;
+    text-align: left;
+    align-self: flex-start;
+}
+.project-overview-content ul li{
+    font-size: 1.125em;
+    font-weight: 500;
+    margin-left: 2em;
+    padding-left: 1em;
+    font-weight: 550;
+    list-style-type: square;
 }
 
+/* Project Result Page */
+.project-result{
+    margin-bottom: 2em;
+}
+.project-result h1{
+    margin-bottom: 0.5em;
+}
+.project-result p{
+    padding: 0%;
+}
 
 
 /* Team Members Section */
-.team-members-heading h1{
-    font-size: 2em;
-    font-weight: bold;
+.team-members-heading {
 }
-.card2{
+.team-members-heading h1{
+    margin-top: 1em;
+}
+#card2{
     flex-direction: row;
     flex-wrap: wrap;
+    margin-bottom: 4em;
 }
+
+
+
 /* Footer */
 footer{
     background-color: var(--primary-color);
@@ -490,6 +825,9 @@ footer{
 footer .social a{
     margin: 0 10px;
     color: var(--alt-white);
+}
+footer .social a i:hover{
+    color: black;
 }
 
 footer .flex{
@@ -556,12 +894,25 @@ footer .flex{
 /* Tablets and Under */
 @media all and (min-width:501px) and (max-width: 1023px){
 
+    body{
+        padding-top: 3.5em;
+    }
+
+    .wrapper{
+        padding: 0em 1em;
+    }
+
         /* Navbar */
         .navbar{
-            padding: 5px 10px;
-            margin: 0%;
+            padding-top: 0.5em;
+            padding-bottom: 0.5em;
+            position: fixed;
+            top: 0%;
+            z-index: 100;
         }
-        
+        .navbar .navbar-brand{
+            width: 20%;
+        }
         .navbar .logo-div{
             display: flex;
             align-items: center;
@@ -570,6 +921,11 @@ footer .flex{
         }
         .navbar .logo{
             width: 100%;
+        }
+        .navbar-nav a{
+            padding: 5px;
+            margin: 0 10px;
+            width: fit-content;
         }
         .navbar nav{
             width: 100%;
@@ -585,123 +941,84 @@ footer .flex{
         .navbar a{
             padding: 5px;
             margin: 0px;
-            font-weight: bold;
-            font-size: 1rem;
         }
     
         /* mainContent Section */
     
         .mainContent{
             /* background-color: var(--body-bg); */
-            padding-bottom: 1em;
+            padding-bottom: 2em;
             padding-top: 1em;
-            background: url(/assets/images/covidbg.jpg);
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: center;
             position: relative;
-            /* height: 80vh; */
         }
-        .mainContent:before {
-            content: "";
-            position: absolute;
-            left: 0; right: 0;
-            top: 0; bottom: 0;
-            background: rgba(0,0,0,0.7);
-          }
         .mainContent h1{
             font-size: 2rem;
-            /* color: var(--link-color); */
-            font-weight: bold;
-        }
-        .mainContent p{
-            margin: 10px 0;
-            font-size: 1.25rem;
-            /* color: var(--text-color); */
-            font-weight: 500;
+            margin: 0.25em 0em 0.5em 0em;
         }
      
         .mainContent a:hover{
-            color: var(--text-color)
+            color: var(--link-color)
         }
         
         .mainContent-text{
-            animation: slideInFromLeft 1s ease-in;
-            padding: 0em 0em 1em 0em;
+            padding: 0em 0em 0em 0em;
             margin: 0%;
             display: flex;
             flex-direction: column;
         }
-        .mainContent-text a{
-            align-self: flex-end;
-        }
-        .mainContent-ctScan{
-            animation: slideInFromRight 1s ease-in;
-            align-items: center;
-            padding: 1em 0.5em;
+        .mainContent-text p{
+            color: var(--text-color);
+            font-size: 1.5em;
             margin: 0%;
+            padding: 0;
         }
-        .mainContent-ctScan #previewImage{
-            max-width: 100%;
+        .mainContent-text ul{
+            margin-bottom: 1.25em;
+            margin-left: 1.5em;
         }
-        .mainContent-ctScan form{
-            width: 100%;
-            padding: 0em 0.5em;
+        .mainContent-text ul li{
+            font-size: 1.375em;
+            font-weight: 450;
+            margin: 0.25em 0.25em;
         }
-        .mainContent-ctScan p,h3{
-            color: #000;
+        .mainContent-text ul li i:hover{
+            color: #007bff;
         }
-        .mainContent-ctScan p{
-            font-size: 1.25em;
-            font-weight: normal;
-            margin: 0%;
-            padding: 0 0 1em 0;
+        .mainContent-text ul li i{
+            color: var(--primary-color);
+            font-size: 0.875em;
+            margin-left: 0em;
         }
-        .mainContent-ctScan .form-control {
-            margin: 1.5em 0em;
-            width: 100%;
-            height: 100%;
-            padding: 0%;
+        .mainContent-text p i{
+            color: var(--primary-color);
         }
-          
-        .mainContent-ctScan .form-control input[type='file'] {
-            width: 100%;
-            margin: 0;
-            font-size: 1.25em;
-            padding: 0em;
+        .mainContent-text .btn{
+            align-self: center;
         }
-          
-        .mainContent-ctScan input:focus {
-            outline: none;
-        }
-        
-        .mainContent-ctScan #myProgress {
-            width: 100%;
-            background-color: #ddd;
-            margin: 1em 0em;
-        }
-          
-        .mainContent-ctScan  #myBar {
-            width: 0%;
-            height: 30px;
-            background-color: #4CAF50;
-            text-align: center;
-            line-height: 30px;
-            color: white;
-        }    
+
+
         /* CT-Scan Page */
         .ct-scan-heading{
-            margin: 1.25em 0em;
+            margin: 2em 0em;
         }
         .ct-scan-heading p{
-            /* line-height: 2em; */
+            padding: 0%;
         }
         .ct-scan-heading h1{
-            font-size: 1.5em;
+            font-size: 1.75em;
+        }
+        .ct-scan-heading ul{
+            margin-left: 1.5em;
+        }
+        .ct-scan-heading ul li{
+            margin: 0.25em 0em;
+            list-style-type: disc;
+            font-size: 1.1em;
+            font-style: italic;
+            font-weight: 550;
         }
         .ct-scan-uploadSection{
-            margin: 1em 0em 2.5em 0em;
-            /* background-color: whitesmoke; */
+            margin: 1em 0em 2em 0em;
         }
         .ct-scan-uploadSection .flex{
             flex-direction: row;
@@ -745,7 +1062,11 @@ footer .flex{
             line-height: 1em;
             color: white;
         }
-
+        .ct-scan-uploadSection .uploadSection-upload .errorNotification {
+            color: red;
+            font-size: 1em;
+            display: none;
+        }
         .ct-scan-uploadSection .uploadSection-preview{
             padding: 0%;
             margin: 0%;
@@ -755,73 +1076,355 @@ footer .flex{
             border-radius: 0px 0px 10px 10px;
         }
 
-        /* Analytics Page */
-        .analytics-main{
+
+        .ct-scan-result{
+            margin: 1.5em 0em 1.5em 0em;
         }
-        .analytics-main h1{
-            margin: 15px 0 5px 0px;
+        .ct-scan-result h2{
+            padding: 0%;
+            font-size: 1.75em;
         }
-        .analytics-main p{
-            margin: 5px 0;
+        .ct-scan-result p{
+            padding: 0%;
         }
-    
-        .analytics-main .card{
-            width: 100%;
-            min-height: 30vh;
+        .ct-scan-result .result-wrapper{
+            margin: 0%;
+            padding: 0%;
+            justify-content: center;
         }
-    
-        .analytics-main .card img{
-            width: 20%;
+        .ct-scan-result .result-wrapper .card{
+            flex-direction: column;
+            margin: 0.5em;
+            padding: 0.5em;
+            width: 40%;
+        }
+        .ct-scan-result .result-wrapper .card .card-heading{
+            padding: 0%;
+            margin: 0em 0em 1em 0em;
+        }
+        .ct-scan-result .result-wrapper .card .card-body{
+            padding: 0%;
+            margin: 0%;
+        }
+        .ct-scan-result .result-wrapper .card .card-title{
+            font-size: 1.25em;
+            padding: 0%;
+            margin: 0%;
+        }
+        .ct-scan-result .result-wrapper .card .card-text{
+            font-size: 1.5em;
+            font-weight: 600;
+            color: #007bff;
+            padding: 0%;
+            margin: 0%;
         }
 
-               /* Covid-Impact Section */
-               .impact-heading{
-                margin-bottom: 30px;
-            }
-            .impact-heading h1{
-                margin-bottom: 0px;
-                padding: 0%;
-                font-size: 1.75em;
-            }
-            .impact-heading p{
-                margin-top: 0px;
-                padding: 0%;
-            }
-            .economic-impact{
-                margin-bottom: 30px;
-            }
-            .economic-impact h3{
-                margin-bottom: 0px;
-                padding: 0%;
-                font-size: 1.5em;
-            }
-            .economic-impact p{
-                margin-top: 0px;
-                padding: 0%;
-            }
-            .health-impact{
-                margin-bottom: 30px;
-            }
-            .health-impact h3{
-                margin-bottom: 0px;
-                padding: 0%;
-                font-size: 1.5em
-            }
-            .health-impact p{
-                margin-top: 0px;
-                padding: 0%;
-            }
+        .ct-scan-result-analysis{
+            margin: 0em 0em 3em 0em;
+        }
+        .ct-scan-result-analysis h2{
+        }
+        .ct-scan-result-analysis p{
+            padding: 0%;
+        }
+        .ct-scan-result-analysis ol{
+            margin-left: 1.75em;
+        }
+        .ct-scan-result-analysis ol li{
+            margin: 0.5em 0em;
+            padding-left: 0.5em;
+            font-style: italic;
+            font-size: 1.25em; 
+        }
+        
+        .ct-scan-summary{
+            margin: 0em 0em 3em 0em;
+        }
+        .ct-scan-summary h2{
+        }
+        .ct-scan-summary p{
+            padding: 0%;
+            font-size: 1.3em;
+        }
+        .ct-scan-summary ol{
+            margin: 0.5em 0em 0em 1em;
+        }
+        .ct-scan-summary ol li{
+            font-size: 1.25em;
+            padding-left: 0.5em;
+            text-align: justify;
+            margin: 0.25em;
+        }
+        
+        /* Analytics Page */
+        .analytics-covid-correlation{
+            margin: 1em 0em;
+        }
+        .analytics-covid-correlation h1{
+            margin: 0.5em 0em 0.5em 0em;
+            font-size: 1.75em;
+        }
+        .analytics-covid-correlation h2{
+            margin: 0.25em 0em 0em 0em;
+        }
+        .analytics-covid-correlation h6{
+            margin: 0.25em 0em 0em 0em;
+            font-size: 1.125em;
+            text-align: center;
+        }
+        .analytics-covid-correlation ul{
+            margin: 0.5em 0em 0.5em 0em;
+        }
+        .analytics-covid-correlation ul li{
+            font-size: 1.125em;
+            font-weight: 500;
+            margin-bottom: 0.5em;
+        }
+        .analytics-covid-correlation div{
+            margin: 0.5em 0em 0.5em 0em;
+            width: 100%;
+        }
+        .analytics-covid-correlation div img{
+            margin: 0em;
+            padding: 0%;
+            width: 100%;
+        }
+        .analytics-covid-correlation h2{
+            align-self: flex-start;
+            font-size: 1.25em;
+        }
+
+        /* Analytics - Intervention efficiency */
+        .analytics-intervention-efficiency {
+            flex-direction: column;
+            margin: 1em 0em;
+        }
+        .analytics-intervention-efficiency h1{
+            margin: 0.5em 0em 0em 0em;
+            font-size: 1.75em;
+        }
+        .analytics-intervention-efficiency h3{
+            margin: 0.5em 0em 0em 0em;
+            font-size: 1.25em;
+        }
+        .analytics-intervention-efficiency h2{
+            margin: 0.5em 0em 0.5em;
+            text-align: center;
+            font-size: 1.5em;
+            padding: 0%;
+        }
+        .analytics-intervention-efficiency .all-intervention{
+            margin-bottom: 1.5em;
+        }
+        .analytics-intervention-efficiency .all-intervention div{
+            padding: 0.5em;
+            width: 100%;
+        }
+        .analytics-intervention-efficiency h6{
+            margin: 1em 0em;
+            font-size: 1.125em;
+        }
+        .analytics-intervention-efficiency .row{
+            margin: 0em 0em 1em 0em;
+        }
+
+/* Analytics - Infection and Death statistics */
+
+.analytics-infection-death-statistics{
+    margin: 1em 0em;
+}
+.analytics-infection-death-statistics h1{
+    margin-top: 0.75em;
+    font-size: 1.75em;
+}
+.analytics-infection-death-statistics h5{
+    margin-top: 0.25em;
+    font-size: 1.325em;
+}
+.analytics-infection-death-statistics h6{
+    margin-top: 0.25em;
+    font-size: 1.175em;
+}
+.analytics-infection-death-statistics ul{
+    margin: 1.25em 0em 1.25em 0em;
+    text-align: left;
+    align-self: flex-start;
+}
+.analytics-infection-death-statistics ul p{
+    font-size: 1.25em;
+    font-weight: 550;
+}
+.analytics-infection-death-statistics ul li{
+    font-size: 1.175em;
+    font-weight: 500;
+}
+.analytics-infection-death-statistics div{
+    margin: 1em 0em 1em 0em;
+    width: 100%;
+}
+
+
+/* Forecasting */
+.analytics-forecasting{
+    background-color: var(--body-bg);
+    flex-direction: column;  
+    align-items: flex-start;
+    margin: 1.5em 0px 1em 0px;  
+}
+.analytics-forecasting h1{
+    margin: 5px 0 0px 0px;
+    font-size: 1.75em;
+}
+.analytics-forecasting h5{
+    margin: 5px 0 0px 0px;
+    align-self: center;
+    font-size: 1.325em;
+}
+
+.analytics-forecasting .forecasting-summary ul{
+    margin: 1.25em 0em 0em 0em;
+    text-align: left;
+    align-self: flex-start;
+}
+.analytics-forecasting .forecasting-summary ul p{
+    font-size: 1.25em;
+    font-weight: 550;
+}
+.analytics-forecasting .forecasting-summary li{
+    font-size: 1.125em;
+    font-weight: 500;
+}
+.analytics-forecasting .forecasting-countries{
+    margin-top: 2em;
+}
+.analytics-forecasting .forecasting-countries h5{
+    margin: 0.75em 0em 0em 0em;
+    padding: 0%;
+    font-size: 1.1em;
+    font-weight: 600;
+    color: rgb(240, 173, 48);
+}
+.analytics-forecasting .forecasting-countries small{
+    padding: 0em 0em 10em 0em;
+    /* padding: 0%; */
+    font-weight: 450;
+    font-size: 1em;
+    /* line-height: 0em; */
+}
+.analytics-forecasting .forecasting-graphs{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2em;
+    width: 100%;
+}
+.analytics-forecasting .forecasting-graphs h3{
+    margin: 0em 0em 0.25em 0em;
+    font-size: 1.5em;
+}
+.analytics-forecasting .forecasting-graphs div{
+    display: flex;
+    margin: 1.25em 0em;
+    width: 100%;
+}
+
+
+               /* Covid Impact Section */
+        #economic-health-page{
+            padding: 0%;
+            margin: 0%;
+            height: 100vh;
+        }
+        #economic-health-page .navbar{
+            height: 8vh;
+            position: relative;
+        }
+        #economic-health-page .impact-heading{
+            background-color: black;
+            color: white;
+            height: 5vh;
+            margin: 0%;
+            padding: 0%;
+        } 
+        .impact-heading h1{
+            margin: 0em 0em 0em 0em;
+            padding: 0%;
+            font-size: 1.5em;
+        }
+        #economic-health-page .economic-health-embedded-file-div{
+            height: 80vh;
+            margin: 0%;
+            padding: 0em;
+        }
+        #economic-health-page .economic-health-embedded-file{
+            height: 100%;
+            width: 100%;
+        }
+        #economic-health-page .footer{
+            height: 7vh;
+            margin: 0%;
+            padding: 0%;
+        }
+
+
+     /* Policy Impact */
+
+     .policy-impact-analysis{
+        margin: 2em 0em;
+    }
+    .policy-impact-analysis h1{
+        margin: 1em 0em 0.5em 0em;
+        font-size: 1.5em;
+    }
+    .policy-impact-analysis div{
+        margin: 1em 0em;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .policy-impact-analysis .taiwan-table{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 1em;
+    }
+    .policy-impact-analysis div img{
+        width: 100%;
+    }
+    .policy-impact-analysis div .smallImage{
+        width: 100%;
+    }
+    .policy-impact-analysis h6{
+        margin-bottom: 8px;
+        text-align: left;
+        font-size: 1.25em;
+    }
+    .policy-impact-analysis .policy-data-relationship{
+        flex-direction: column;
+    }
+    .policy-impact-analysis .policy-data-relationship div img{
+        width: 100%;
+    }
+    .policy-impact-analysis .policy-data-relationship h6{
+        align-self: center;
+        padding: 0%;
+        margin: 0em 0em 1.25em 0em;
+    }
+
+
     
         /* Data Sources Section */
         .data-sources-section{
-            margin-bottom: 2em;
+            margin: 2em 0em;
         }
         .data-sources-section h1{
-            font-size: 1.875em;
+            font-size: 2em;
+            margin-top: 0.5em;
         }
         .data-sources-section .intro{
-            font-size: 1.5em;
+            font-size: 1.25em;
             margin-bottom: 1em;
+            font-weight: 450;
         }
         .data-sources-section .card-wrapper{
             padding: 0%;
@@ -831,11 +1434,12 @@ footer .flex{
         }
 
         .data-sources-section .card-wrapper .card{
-            padding: 0.5em;
+            padding: 1em;
             margin: 0em;
             width: 100%;
             flex-direction: column;
             transition: 0.4s ease-in;
+            /* min-height: 25em; */
         }
         .data-sources-section .card-wrapper .card:hover{
             transform: scale(1.05);
@@ -845,6 +1449,7 @@ footer .flex{
             padding: 0em;
             margin: 0%;
             width: 100%;
+            /* height: 50%; */
             display: flex;
         }
 
@@ -853,22 +1458,26 @@ footer .flex{
             padding: 0%;
             display: flex;
             align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
         }
         .data-sources-section .card-wrapper .icon-div img{
             width: 100%;
-            object-fit: cover;
+            /* height: 100%; */
+            object-fit: contain;
         }
         .data-sources-section .card-wrapper .source-title-div{
             padding: 0%;
             margin: 0%;
             text-align: left;
             display: flex;
-            align-items: flex-end;
+            align-items: center;
         }
         .data-sources-section .card .card-title{
-            font-size: 1.5em;
+            font-size: 1.75em;
             font-weight: bold;
-            margin: 0em 0em 0em 0.25em;
+            margin: 0.5em 0em 0em 0.5em;
         }
         .data-sources-section .card .card-body{
             text-align: left;
@@ -876,16 +1485,100 @@ footer .flex{
             margin: 0%;
             display: flex;
             flex-direction: column;
+            align-self: flex-start;
+            width: 100%;
+        }
+
+        .data-sources-section .card .card-body a{
+            display: flex;
+            flex-direction: column;
+        }
+        .data-sources-section .card .card-body .card-text:hover{
+            /* text-decoration: underline; */
+            color: #007bff;
         }
         .data-sources-section .card-body .card-text{
-            font-size: 1.325em;
+            font-size: 1.5em;
             line-height: 1.25em;
             margin: 0.5em 0em;
+            font-weight: 500;
+            color: var(--text-color);
         }
         .data-sources-section .card-body small{
             font-size: 1.125em;
-            text-align: right;
+            align-self: flex-end;
+            font-weight: bold;
         }
+        .data-sources-section .smallfont .card-text{
+            font-size: 1.375em;
+            line-height: 1em;
+        }
+
+/* Project Overview Section */
+.project-overview-content{
+    margin: 2.5em 0em 3em 0em;
+
+}
+.project-overview-content h1{
+    font-size: 1.75em;
+}
+.project-overview-content p{
+    margin-bottom: 1em;
+    text-align: justify;
+    font-size: 1.375em;
+}
+.project-overview-content ol{
+    margin: 0em 0em 1.25em 0em;
+    text-align: left;
+    align-self: flex-start;
+}
+.project-overview-content ol li{
+    font-size: 1.25em;
+    font-weight: 500;
+    margin-left: 1em;
+    padding-left: 0.5em;
+    font-weight: 550;
+}
+.project-overview-content ul{
+    margin: 0em 0em 1.25em 0em;
+    text-align: left;
+    align-self: flex-start;
+}
+.project-overview-content ul li{
+    font-size: 1.25em;
+    font-weight: 500;
+    margin-left: 1em;
+    padding-left: 0.5em;
+    font-weight: 550;
+    list-style-type: square;
+}
+
+/* Project Result Page */
+.project-result{
+    margin: 2em 0em;
+}
+.project-result h1{
+    margin-bottom: 0.5em;
+}
+.project-result p{
+    padding: 0%;
+    font-size: 1.3em;
+}
+
+/* Team Members Section */
+.team-members-heading {
+    margin-top: 1.5em;
+}
+.team-members-heading h1{
+    margin-top: 1em;
+    font-size: 1.75em;
+}
+#card2{
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: 4em;
+}
+
     
     
         /* Footer */
@@ -917,6 +1610,10 @@ footer .flex{
 @media  (max-width: 500px){
     body{
         padding-top: 3.5em;
+    }
+
+    .wrapper{
+        padding: 0em 0.5em;
     }
     
    /* Navbar Stylings */
@@ -966,103 +1663,56 @@ footer .flex{
         .mainContent{
             color: var(--text-color);
             margin: 0%;
-            padding: 1em 0.25em;
-            background: url(/assets/images/covidbg.jpg);
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-            position: relative;
-            height: 100%;
-        }
-        .mainContent:before {
-            content: "";
-            position: absolute;
-            left: 0; right: 0;
-            top: 0; bottom: 0;
-            background: rgba(0,0,0,0.8);
+            padding-bottom: 2em;
+            padding-top: 1em;
         }
         .mainContent h1{
             font-size: 1.75rem;
-            /* color: var(--link-color); */
-            font-weight: bold;
+            color: var(--text-color);
+            margin: 0.25em 0em 0.5em 0em;
+            align-self: center;
         }
-        .mainContent p{
-            margin: 5px 0;
-            font-size: 1rem;
-            /* color: var(--text-color); */
-            font-weight: 600;
-        }
+
         .mainContent a:hover{
             color: var(--link-color)
         }
 
         .mainContent-text{
-            display: flex;
-            flex-direction: column;
-            animation: slideInFromLeft 1s ease-in;
-            padding: 0em 0em 1em 0em;
-            margin: 0%;
-        }
-        .mainContent-text h1{
-            text-align: center;
-        }
-        .mainContent-text a{
-            align-self: center;
-            width: fit-content;
-        }
-        .mainContent-ctScan{
-            animation: slideInFromRight 1s ease-in;
-            align-items: center;
-            padding: 1em 0.5em;
-            margin: 0%;
-        }
-        .mainContent-ctScan #previewImage{
-            max-width: 90%;
-        }
-        .mainContent-ctScan form{
-            width: 100%;
-            padding: 0em 0.5em;
-        }
-        .mainContent-ctScan p,h3{
-            color: #000;
-        }
-        .mainContent-ctScan p{
-            font-size: 1em;
-            font-weight: normal;
-            margin: 0%;
-            padding: 0 0 1em 0;
-        }
-        .mainContent-ctScan .form-control {
-            margin: 1.25em 0em;
-            width: 100%;
-            height: 100%;
             padding: 0%;
+            margin: 0%;
+            flex-direction: column;
+            align-items: flex-start;
         }
-        
-        .mainContent-ctScan .form-control input[type='file'] {
-            width: 100%;
-            margin: 0;
-            font-size: 1em;
-            padding: 0em;
+        .mainContent-text p{
+            color: var(--text-color);
+            font-size: 1.375em;
+            margin: 0%;
+            padding: 0;
         }
-        
-        .mainContent-ctScan input:focus {
-            outline: none;
+        .mainContent-text ul{
+            margin-bottom: 1.25em;
+            margin-left: 1.5em;
         }
-
-        .mainContent-ctScan #myProgress {
-            width: 100%;
-            background-color: #ddd;
-            margin: 1em 0em;
+        .mainContent-text ul li{
+            font-size: 1.25em;
+            font-weight: 450;
+            margin: 0.375em 0.25em;
+            list-style-type: disc;
+            text-align: justify;
         }
-        
-        .mainContent-ctScan  #myBar {
-            width: 0%;
-            height: 30px;
-            background-color: #4CAF50;
-            text-align: center;
-            line-height: 30px;
-            color: white;
+        .mainContent-text ul li i:hover{
+            color: #007bff;
+        }
+        .mainContent-text ul li i{
+            color: var(--primary-color);
+            font-size: 0.75em;
+            margin-left: 0em;
+        }
+        .mainContent-text p i{
+            color: var(--primary-color);
+        }
+        .mainContent-text .btn{
+            align-self: center;
         }
 
         /* CT-Scan Page */
@@ -1070,16 +1720,24 @@ footer .flex{
             margin: 1.5em 0em;
         }
         .ct-scan-heading p{
-            font-size: 1em;
-            font-weight: bold;
+            padding: 0%;
         }
         .ct-scan-heading h1{
-            font-size: 1.75em;
-            font-weight: bold;
+            padding: 0%;
+            margin: 0%;
+        }
+        .ct-scan-heading ul{
+            margin-left: 1.25em;
+        }
+        .ct-scan-heading ul li{
+            margin: 0.25em 0em;
+            list-style-type: disc;
+            font-size: 1.125em;
+            font-style: italic;
+            font-weight: 550;
         }
         .ct-scan-uploadSection{
-            margin: 1em 0em 3em 0em;
-            /* background-color: whitesmoke; */
+            margin: 1em 0em 1.5em 0em;
         }
         .ct-scan-uploadSection .flex{
             flex-direction: row;
@@ -1130,93 +1788,361 @@ footer .flex{
         .ct-scan-uploadSection .uploadSection-preview img{
             width: 100%;
             border-radius: 0px 0px 10px 10px;
+            padding: 0%;
+            margin: 0%;
         }
-        .ct-scan-result h3{
-            font-size: 1.5em;
+
+        .ct-scan-result{
+            margin: 1.5em 0em 1.5em 0em;
+        }
+        .ct-scan-result h2{
+            padding: 0%;
+            font-size: 1.75em;
         }
         .ct-scan-result p{
-            font-size: 1em;
-            font-weight: bold;
+            padding: 0%;
         }
+        .ct-scan-result .result-wrapper{
+            margin: 0%;
+            padding: 0%;
+            justify-content: center;
+        }
+        .ct-scan-result .result-wrapper .card{
+            flex-direction: column;
+            margin: 0.5em;
+            padding: 0.5em;
+            width: 50%;
+        }
+        .ct-scan-result .result-wrapper .card .card-heading{
+            padding: 0%;
+            margin: 0em 0em 1em 0em;
+        }
+        .ct-scan-result .result-wrapper .card .card-body{
+            padding: 0%;
+            margin: 0%;
+        }
+        .ct-scan-result .result-wrapper .card .card-title{
+            font-size: 1em;
+            padding: 0%;
+            margin: 0%;
+        }
+        .ct-scan-result .result-wrapper .card .card-text{
+            font-size: 1.5em;
+            font-weight: 600;
+            color: #007bff;
+            padding: 0%;
+            margin: 0%;
+        }
+
+        .ct-scan-result-analysis{
+            margin: 0em 0em 3em 0em;
+        }
+        .ct-scan-result-analysis h2{
+        }
+        .ct-scan-result-analysis p{
+            padding: 0%;
+        }
+        .ct-scan-result-analysis ol{
+            margin-left: 1.75em;
+        }
+        .ct-scan-result-analysis ol li{
+            margin: 0.5em 0em;
+            padding-left: 0.5em;
+            font-style: italic;
+            font-size: 1.125em; 
+        }
+        
+        .ct-scan-summary{
+            margin: 0em 0em 3em 0em;
+        }
+        .ct-scan-summary h2{
+            font-style: 1.25em;
+        }
+        .ct-scan-summary p{
+            padding: 0%;
+            font-size: 1.25em;
+        }
+        .ct-scan-summary ol{
+            margin: 0.5em 0em 0em 1em;
+        }
+        .ct-scan-summary ol li{
+            font-size: 1.125em;
+            padding-left: 0.5em;
+            text-align: justify;
+            margin: 0.25em;
+        }        
+
         /* Analytics Page */
-        .analytics-main{
-            background-color: var(--body-bg);
+
+        /* Analytics - Covid Correlation  */
+        .analytics-covid-correlation{
+            margin-bottom: 1em;
         }
-        .analytics-main h1{
-            margin: 15px 0 0px 0px;
+        .analytics-covid-correlation h1{
+            margin: 0.5em 0em 0.5em 0em;
             font-size: 1.75em;
-            font-weight: bold;
         }
-        .analytics-main p{
-            margin: 10px 0 0px 0px;
+        .analytics-covid-correlation h2{
+            margin: 0.25em 0em 0em 0em;
+        }
+        .analytics-covid-correlation h6{
+            margin: 0.25em 0em 0em 0em;
+            font-size: 1.125em;
+            text-align: center;
+        }
+        .analytics-covid-correlation ul{
+            margin: 0.5em 0em 0.5em 0em;
+        }
+        .analytics-covid-correlation ul li{
             font-size: 1em;
-            font-weight: bold;
+            font-weight: 500;
         }
-        .analytics-main .card{
+        .analytics-covid-correlation div{
+            margin: 0.5em 0em 0.5em 0em;
             width: 100%;
-            min-height: 20vh;
         }
-
-        .analytics-main .card img{
-            width: 20%;
-        }
-
-        /* Covid-Impact Section */
-        .impact-heading{
-            margin-bottom: 30px;
-        }
-        .impact-heading h1{
-            margin-bottom: 0px;
+        .analytics-covid-correlation div img{
+            margin: 0em;
             padding: 0%;
-            font-size: 1.75em;
+            width: 100%;
         }
-        .impact-heading p{
-            margin-top: 0px;
+        .analytics-covid-correlation h2{
+            align-self: flex-start;
+            font-size: 1.25em;
+        }
+
+
+/* Analytics - Intervention efficiency */
+        .analytics-intervention-efficiency {
+            flex-direction: column;
+            margin-bottom: 1em;
+        }
+        .analytics-intervention-efficiency h1{
+            margin: 0.5em 0em 0em 0em;
+            font-size: 1.725em;
+        }
+        .analytics-intervention-efficiency h3{
+            margin: 0.5em 0em 0em 0em;
+            font-size: 1.25em;
+        }
+        .analytics-intervention-efficiency h2{
+            margin: 0.5em 0em 0.5em;
+            text-align: center;
+            font-size: 1.5em;
+            padding: 0%;
+        }
+        .analytics-intervention-efficiency .all-intervention{
+            margin-bottom: 1.5em;
+        }
+        .analytics-intervention-efficiency .all-intervention div{
+            padding: 0.5em;
+            width: 100%;
+        }
+        .analytics-intervention-efficiency h6{
+            margin: 1em 0em;
+            font-size: 1.125em;
+        }
+        .analytics-intervention-efficiency .row{
+            margin: 0em 0em 1em 0em;
+        }
+
+/* Analytics - Infection and Death statistics */
+
+        .analytics-infection-death-statistics{
+            margin-bottom: 1.5em;
+        }
+        .analytics-infection-death-statistics h1{
+            margin-top: 0.75em;
+            font-size: 1.5em;
+        }
+        .analytics-infection-death-statistics h5{
+            margin-top: 0.25em;
+            font-size: 1.325em;
+        }
+        .analytics-infection-death-statistics h6{
+            margin-top: 0.25em;
+            font-size: 1.125em;
+        }
+        .analytics-infection-death-statistics ul{
+            margin: 1.25em 0em 1.25em 0em;
+            text-align: left;
+            align-self: flex-start;
+        }
+        .analytics-infection-death-statistics ul p{
+            font-size: 1.175em;
+            font-weight: 550;
+        }
+        .analytics-infection-death-statistics ul li{
+            font-size: 1.125em;
+            font-weight: 500;
+        }
+        .analytics-infection-death-statistics div{
+            margin: 1em 0em 1em 0em;
+            width: 100%;
+        }
+        
+
+/* Forecasting */
+        .analytics-forecasting{
+            background-color: var(--body-bg);
+            flex-direction: column;  
+            align-items: flex-start;
+            margin: 1em 0px 1em 0px;  
+        }
+        .analytics-forecasting h1{
+            margin: 5px 0 0px 0px;
+            font-size: 1.5em;
+        }
+        .analytics-forecasting h5{
+            margin: 5px 0 0px 0px;
+            align-self: center;
+            font-size: 1.25em;
+        }
+
+        .analytics-forecasting .forecasting-summary ul{
+            margin: 1.25em 0em 0em 0em;
+            text-align: left;
+            align-self: flex-start;
+        }
+        .analytics-forecasting .forecasting-summary ul p{
+            font-size: 1.1em;
+            font-weight: 550;
+        }
+        .analytics-forecasting .forecasting-summary li{
+            font-size: 1em;
+            font-weight: 500;
+        }
+        .analytics-forecasting .forecasting-countries{
+            margin-top: 2em;
+        }
+        .analytics-forecasting .forecasting-countries h5{
+            margin: 0.75em 0em 0em 0em;
             padding: 0%;
             font-size: 1em;
-            font-weight: bold;
+            font-weight: 600;
+            color: rgb(240, 173, 48);
         }
-        .economic-impact{
-            margin-bottom: 30px;
+        .analytics-forecasting .forecasting-countries small{
+            padding: 0em 0em 10em 0em;
+            /* padding: 0%; */
+            font-weight: 450;
+            font-size: 0.9em;
+            /* line-height: 0em; */
         }
-        .economic-impact h3{
-            margin-bottom: 0px;
+        .analytics-forecasting .forecasting-graphs{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 2em;
+            width: 100%;
+        }
+        .analytics-forecasting .forecasting-graphs h3{
+            margin: 0em 0em 0.25em 0em;
+            font-size: 1.5em;
+        }
+        .analytics-forecasting .forecasting-graphs div{
+            display: flex;
+            margin: 1.25em 0em;
+            width: 100%;
+        }
+
+
+/* Covid Impact Section */
+        #economic-health-page{
+            padding: 0%;
+            margin: 0%;
+            height: 100vh;
+        }
+        #economic-health-page .navbar{
+            height: 8vh;
+            position: relative;
+        }
+        #economic-health-page .impact-heading{
+            background-color: black;
+            color: white;
+            height: 5vh;
+            margin: 0%;
+            padding: 0%;
+        } 
+        .impact-heading h1{
+            margin: 0em 0em 0em 0em;
             padding: 0%;
             font-size: 1.5em;
         }
-        .economic-impact p{
-            margin-top: 0px;
-            padding: 0%;
-            font-size: 1em;
+        #economic-health-page .economic-health-embedded-file-div{
+            height: 80vh;
+            margin: 0%;
+            padding: 0em;
         }
-        .health-impact{
-            margin-bottom: 30px;
+        #economic-health-page .economic-health-embedded-file{
+            height: 100%;
+            width: 100%;
         }
-        .health-impact h3{
-            margin-bottom: 0px;
+        #economic-health-page .footer{
+            height: 7vh;
+            margin: 0%;
             padding: 0%;
-            font-size: 1.5em
-        }
-        .health-impact p{
-            margin-top: 0px;
-            padding: 0%;
-            font-size: 1em;
         }
 
 
-        /* Data Sources Section */
+
+        /* Policy Impact */
+
+        .policy-impact-analysis{
+            margin-bottom: 2em;
+        }
+        .policy-impact-analysis h1{
+            margin: 1em 0em 0.5em 0em;
+            font-size: 1.325em;
+        }
+        .policy-impact-analysis div{
+            margin: 1em 0em;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+        .policy-impact-analysis .taiwan-table{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 0.75em;
+        }
+        .policy-impact-analysis div img{
+            width: 100%;
+        }
+        .policy-impact-analysis div .smallImage{
+            width: 100%;
+        }
+        .policy-impact-analysis h6{
+            margin-bottom: 8px;
+            text-align: left;
+            font-size: 1.125em;
+        }
+        .policy-impact-analysis .policy-data-relationship{
+            flex-direction: column;
+        }
+        .policy-impact-analysis .policy-data-relationship div img{
+            width: 100%;
+        }
+        .policy-impact-analysis .policy-data-relationship h6{
+            align-self: center;
+            padding: 0%;
+            margin: 0em 0em 1.25em 0em;
+        }
+
+
+/* Data Sources Section */
         .data-sources-section{
             margin-bottom: 2em;
         }
         .data-sources-section h1{
             font-size: 1.5em;
-            font-weight: bold;
-            margin-top: 0.75em;
+            margin-top: 0.5em;
         }
         .data-sources-section .intro{
             font-size: 1.125em;
-            margin: 0.5em 0em;
-            font-weight: bold;
+            margin-bottom: 1em;
+            font-weight: 450;
         }
         .data-sources-section .card-wrapper{
             padding: 0%;
@@ -1226,11 +2152,12 @@ footer .flex{
         }
 
         .data-sources-section .card-wrapper .card{
-            padding: 0.5em;
+            padding: 1em;
             margin: 0em;
             width: 100%;
             flex-direction: column;
             transition: 0.4s ease-in;
+            /* min-height: 25em; */
         }
         .data-sources-section .card-wrapper .card:hover{
             transform: scale(1.05);
@@ -1240,6 +2167,7 @@ footer .flex{
             padding: 0em;
             margin: 0%;
             width: 100%;
+            /* height: 50%; */
             display: flex;
         }
 
@@ -1248,22 +2176,26 @@ footer .flex{
             padding: 0%;
             display: flex;
             align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
         }
         .data-sources-section .card-wrapper .icon-div img{
-            width: 90%;
-            object-fit: cover;
+            width: 100%;
+            /* height: 100%; */
+            object-fit: contain;
         }
         .data-sources-section .card-wrapper .source-title-div{
             padding: 0%;
             margin: 0%;
             text-align: left;
             display: flex;
-            align-items: flex-end;
+            align-items: center;
         }
         .data-sources-section .card .card-title{
-            font-size: 1.25em;
+            font-size: 1.325em;
             font-weight: bold;
-            margin: 0em 0em 0em 0.25em;
+            margin: 0.5em 0em 0em 0.5em;
         }
         .data-sources-section .card .card-body{
             text-align: left;
@@ -1271,43 +2203,104 @@ footer .flex{
             margin: 0%;
             display: flex;
             flex-direction: column;
+            align-self: flex-start;
+            width: 100%;
+        }
+
+        .data-sources-section .card .card-body a{
+            display: flex;
+            flex-direction: column;
+        }
+        .data-sources-section .card .card-body .card-text:hover{
+            /* text-decoration: underline; */
+            color: #007bff;
         }
         .data-sources-section .card-body .card-text{
-            font-size: 1em;
-            line-height: 1.125em;
+            font-size: 1.125em;
+            line-height: 1.25em;
             margin: 0.5em 0em;
-            font-weight: 600;
+            font-weight: 500;
+            color: var(--text-color);
         }
         .data-sources-section .card-body small{
             font-size: 1em;
-            text-align: right;
+            align-self: flex-end;
             font-weight: bold;
         }
+        .data-sources-section .smallfont .card-text{
+            font-size: 0.9em;
+            line-height: 1em;
+        }
 
-        /* Project Overview Section */
+
+/* Project Overview Section */
         .project-overview-content{
-            margin: 1.5em 0em;
+            margin: 1.5em 0em 3em 0em;
+
         }
         .project-overview-content h1{
             font-size: 1.5em;
-            font-weight: bold;
         }
         .project-overview-content p{
             margin-bottom: 1em;
-            font-size: 1em;
+            text-align: justify;
+        }
+        .project-overview-content ol{
+            margin: 0em 0em 1.25em 0em;
+            text-align: left;
+            align-self: flex-start;
+        }
+        .project-overview-content ol li{
+            font-size: 1.1em;
+            font-weight: 500;
+            margin-left: 1em;
+            padding-left: 0.5em;
+            font-weight: 550;
+        }
+        .project-overview-content ul{
+            margin: 0em 0em 1.25em 0em;
+            text-align: left;
+            align-self: flex-start;
+        }
+        .project-overview-content ul li{
+            font-size: 1.1em;
+            font-weight: 500;
+            margin-left: 1em;
+            padding-left: 0.5em;
+            font-weight: 550;
+            list-style-type: square;
         }
 
-        /* Team Members Section */
-        .team-members-heading h1{
-            font-size: 1.5em;
-            font-weight: bold;
+        /* Project Result Page */
+.project-result{
+    margin: 1.5em 0em;
+}
+.project-result h1{
+    margin-bottom: 0.5em;
+}
+.project-result p{
+    padding: 0%;
+}
+
+/* Team Members Section */
+        .team-members-heading {
         }
+        .team-members-heading h1{
+            margin-top: 0.75em;
+            font-size: 1.5em;
+        }
+        #card2{
+            flex-direction: row;
+            flex-wrap: wrap;
+            margin-bottom: 4em;
+        }
+
+
 
         /* Footer */
         footer{
             text-align: center;
             padding: 0.25em 0em;
-            /* height: 10vh; */
         }
         footer .social a{
             margin: 0 15px;
@@ -1350,5 +2343,10 @@ footer .flex{
     }
     footer .social a{
         font-size: 0.5rem;
+    }
+}
+@media (min-width:1024px) and (max-width: 1279px){
+    .wrapper{
+        padding: 0em 2em;
     }
 }

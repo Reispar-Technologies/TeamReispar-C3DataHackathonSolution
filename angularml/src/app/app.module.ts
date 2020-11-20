@@ -21,6 +21,8 @@ import { TeamMembersComponent } from './team-members/team-members.component';
 import { AnalyticsCorrelationComponent } from './analytics-correlation/analytics-correlation.component';
 import { AnalyticsStatisticsComponent } from './analytics-statistics/analytics-statistics.component';
 import { AnalyticsForecastingComponent } from './analytics-forecasting/analytics-forecasting.component';
+import { ImpactPolicyComponent } from './impact-policy/impact-policy.component';
+import { ProjectResultComponent } from './project-result/project-result.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { AnalyticsForecastingComponent } from './analytics-forecasting/analytics
     TeamMembersComponent,
     AnalyticsCorrelationComponent,
     AnalyticsStatisticsComponent,
-    AnalyticsForecastingComponent
+    AnalyticsForecastingComponent,
+    ImpactPolicyComponent,
+    ProjectResultComponent
   ],
   imports: [
     BrowserModule,

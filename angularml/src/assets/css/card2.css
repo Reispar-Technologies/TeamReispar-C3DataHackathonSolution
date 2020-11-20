@@ -7,10 +7,11 @@ h3 {
 	margin: 10px 0;
 }
 
-h6 {
+#card2 h6 {
 	margin: 5px 0;
-    /* text-transform: uppercase; */
-    font-weight: bold;
+	font-weight: bold;
+	font-size: 1.125em;
+	padding: 0%;
 }
 
 .card-container {   
@@ -21,7 +22,7 @@ h6 {
     margin: 10px;
     color: #333;
     text-align: center;
-    width: 22.5em;
+	width: 22.5em;
 }
 .card-container .round {
 	border: 1px solid var(--primary-color);
@@ -57,21 +58,20 @@ h6 {
 		border-radius: 10px;
 		box-shadow: 0px 3px 10px rgba(0,0,0,0.2);
 		padding: 10px;
-		margin: 10px;
+		margin: 10px 5px;
 		color: #333;
 		text-align: center;
-		width: 85%;
+		width: 95%;
 	}
-	h3 {
+	#card2 h3 {
 		margin: 5px 0;
-		font-size: 1.875em;
+		font-size: 1.75em;
 	}
 	
-	h6 {
+	#card2 h6 {
 		margin: 2.5px 0;
-		/* text-transform: uppercase; */
-		font-size: 1.125em;
-		font-weight: bold;
+		font-size: 1.325em;
+		font-weight: 200;
 	}
 }
 
@@ -86,12 +86,12 @@ h6 {
 		text-align: center;
 		width: 70%;
 	}
-	h3 {
+	#card2 h3 {
 		margin: 10px 0;
 		font-size: 2.5em;
 	}
 	
-	h6 {
+	#card2 h6 {
 		margin: 5px 0;
 		/* text-transform: uppercase; */
 		font-size: 1.5em;
