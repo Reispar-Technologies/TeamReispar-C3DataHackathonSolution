@@ -3,7 +3,7 @@
 ##  Siham's Economic & Health Analysis Dashboard 
 Link- https://datastudio.google.com/u/0/reporting/fe21b355-2f92-4dd2-91ea-a25d82accd37/page/Wl3oB
 
-Link to CT Scan Deep Learning Model Weight (the model is EfficientNetB6) https://drive.google.com/file/d/1sUa4DKyyVVMy-TsYIkUI3ivjd46R-Wng/view?usp=sharing 
+Link to CT Scan Deep Learning Model Weight (the model is EfficientNetB6) https://drive.google.com/file/d/1L7nWet_B8tuFLIkc2-bUUusa_B247Pcw/view
 
 # Data Sources:
 
